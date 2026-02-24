@@ -1378,14 +1378,20 @@
         async function loadAndRender() {
             renderLoading();
             const rows = await fetchSheetData();
-            if (rows === null) { showToast('❌ No se pudo cargar el Sheet. ¿Lo publicaste?'); renderSetupWizard(); return; }
+            if (rows === null) {
+                // Show dashboard anyway with empty areas
+                showToast('⚠️ No se pudieron cargar datos del Sheet. Mostrando áreas vacías.');
+                APP_DATA = organizeData([]);
+                renderDashboard(APP_DATA);
+                return;
+            }
             APP_DATA = organizeData(rows);
             renderDashboard(APP_DATA);
             showToast(`✅ ${rows.length} enlaces cargados`);
         }
 
         async function refreshData() {
-            if (!sheetUrl) { showToast('⚠️ Configura el Google Sheet primero'); return; }
+            if (!sheetUrl) { showToast('⚠️ Configura el Google Sheet en ⚙️ Configuración'); return; }
             await loadAndRender();
         }
 
@@ -1400,8 +1406,14 @@
 
         /* ===== INIT ===== */
         (async function init() {
-            if (sheetUrl && extractSheetId(sheetUrl)) { await loadAndRender(); }
-            else { renderSetupWizard(); }
+            if (sheetUrl && extractSheetId(sheetUrl)) {
+                await loadAndRender();
+            } else {
+                // Show dashboard with empty areas even without config
+                APP_DATA = organizeData([]);
+                renderDashboard(APP_DATA);
+                showToast('ℹ️ Ve a ⚙️ Configuración para conectar tu Google Sheet');
+            }
         })();
     </script>
 </body>
