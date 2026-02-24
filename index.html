@@ -1065,22 +1065,49 @@
         /* ===== SHEET HELPERS ===== */
         function extractSheetId(url) { const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/); return m ? m[1] : null; }
 
+        /* ===== FETCH DATA VIA JSONP (bypasses CORS) ===== */
         async function fetchSheetData() {
-            const id = extractSheetId(sheetUrl);
-            if (!id) return null;
-            sheetEditUrl = `https://docs.google.com/spreadsheets/d/${id}/edit`;
-            try {
-                const resp = await fetch(`https://docs.google.com/spreadsheets/d/${id}/pub?output=csv&cachebust=${Date.now()}`);
-                if (!resp.ok) throw new Error('No se pudo cargar');
-                const text = await resp.text();
-                // If Google returns HTML instead of CSV, the sheet isn't published
-                if (text.trim().startsWith('<!') || text.trim().startsWith('<html')) {
-                    console.error('Sheet returned HTML - not published');
-                    return null;
-                }
-                // Empty sheet with only headers returns [] which is valid
-                return parseCSV(text);
-            } catch (e) { console.error(e); return null; }
+            // Primary: JSONP via script tag (bypasses all CORS issues)
+            if (scriptUrl) {
+                try {
+                    const data = await fetchViaJSONP(scriptUrl);
+                    if (data && data.status === 'ok') {
+                        if (sheetUrl) {
+                            const id = extractSheetId(sheetUrl);
+                            if (id) sheetEditUrl = `https://docs.google.com/spreadsheets/d/${id}/edit`;
+                        }
+                        return data.rows || [];
+                    }
+                } catch (e) { console.error('JSONP error:', e); }
+            }
+            return null;
+        }
+
+        function fetchViaJSONP(url) {
+            return new Promise((resolve, reject) => {
+                // Create unique callback name
+                const cbName = '_misagi_cb_' + Date.now();
+                // Set global callback
+                window[cbName] = function (data) {
+                    resolve(data);
+                    delete window[cbName];
+                };
+                // Create script tag
+                const script = document.createElement('script');
+                script.src = url + '?callback=' + cbName + '&cachebust=' + Date.now();
+                script.onerror = function () {
+                    delete window[cbName];
+                    reject(new Error('JSONP script failed'));
+                };
+                script.onload = function () {
+                    // Cleanup after a delay (callback should have fired by now)
+                    setTimeout(() => {
+                        if (document.head.contains(script)) document.head.removeChild(script);
+                        if (window[cbName]) { delete window[cbName]; reject(new Error('Callback not called')); }
+                    }, 5000);
+                };
+                document.head.appendChild(script);
+            });
         }
 
         function parseCSV(text) {
@@ -1133,12 +1160,12 @@
 
         /* ===== APPS SCRIPT WRITE ===== */
         async function sendToScript(payload) {
-            if (!scriptUrl) { showToast('⚠️ Configura la URL del Apps Script primero'); return false; }
+            if (!scriptUrl) { showToast('⚠️ Configura la URL del Apps Script en ⚙️ Configuración'); return false; }
             try {
                 showToast('⏳ Guardando en Google Sheets...');
                 await fetch(scriptUrl, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
-                // no-cors = opaque response, we assume success and re-fetch
-                await new Promise(r => setTimeout(r, 2000));
+                // Wait for Google to process, then re-fetch fresh data
+                await new Promise(r => setTimeout(r, 2500));
                 await loadAndRender();
                 showToast('✅ ¡Cambio guardado en Google Sheets!');
                 return true;
