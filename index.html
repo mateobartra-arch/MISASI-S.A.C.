@@ -1056,10 +1056,17 @@
         const TYPE_ICONS = { sheets: '📗', docs: '📘', pdf: '📕', slides: '📙', folder: '📁', form: '📝', link: '🔗' };
         const TYPE_LABELS = { sheets: 'Google Sheets', docs: 'Google Docs', pdf: 'PDF', slides: 'Google Slides', folder: 'Carpeta Drive', form: 'Google Forms', link: 'Enlace' };
 
+        /* ══════════════════════════════════════════════════════
+           CONFIGURACIÓN — Pega tus URLs aquí para que
+           todos los dispositivos se conecten automáticamente.
+           ══════════════════════════════════════════════════════ */
+        const DEFAULT_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTdZ3PHis1B2Vdelx2qyY0frKgyDhZOJKSqb5cLRaqgrB2b6ep8gslepHKO4syCV4foQWxXahQPuwEa/pubhtml';
+        const DEFAULT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwFeduej4rTjmB8LUACWiuLB6BIvrrJUZG9eDFIO7HwhRv0xHhvsW6XCdHud0IWDIjA/exec';
+
         let APP_DATA = [];
         let currentAreaName = null;
-        let sheetUrl = localStorage.getItem(CONFIG_KEY) || '';
-        let scriptUrl = localStorage.getItem(SCRIPT_KEY) || '';
+        let sheetUrl = localStorage.getItem(CONFIG_KEY) || DEFAULT_SHEET_URL;
+        let scriptUrl = localStorage.getItem(SCRIPT_KEY) || DEFAULT_SCRIPT_URL;
         let sheetEditUrl = '';
 
         /* ===== SHEET HELPERS ===== */
