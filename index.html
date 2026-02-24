@@ -1072,7 +1072,14 @@
             try {
                 const resp = await fetch(`https://docs.google.com/spreadsheets/d/${id}/pub?output=csv&cachebust=${Date.now()}`);
                 if (!resp.ok) throw new Error('No se pudo cargar');
-                return parseCSV(await resp.text());
+                const text = await resp.text();
+                // If Google returns HTML instead of CSV, the sheet isn't published
+                if (text.trim().startsWith('<!') || text.trim().startsWith('<html')) {
+                    console.error('Sheet returned HTML - not published');
+                    return null;
+                }
+                // Empty sheet with only headers returns [] which is valid
+                return parseCSV(text);
             } catch (e) { console.error(e); return null; }
         }
 
