@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <style>
-        /* ===== RESET & BASE ===== */
         *,
         *::before,
         *::after {
@@ -21,17 +20,13 @@
         }
 
         :root {
-            /* MISAGI corporate colors */
             --misagi-blue: #1b3a6b;
             --misagi-blue-light: #2a5298;
             --misagi-green: #2d8b55;
             --misagi-green-light: #3aab6a;
-
-            /* Light mode palette */
             --bg-primary: #f4f6fa;
             --bg-secondary: #ffffff;
             --bg-card: #ffffff;
-            --bg-glass: rgba(255, 255, 255, 0.85);
             --text-primary: #1e293b;
             --text-secondary: #475569;
             --text-muted: #94a3b8;
@@ -44,6 +39,8 @@
             --radius-sm: 14px;
             --radius-xs: 10px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --danger: #dc2626;
+            --danger-light: #fef2f2;
         }
 
         body {
@@ -54,13 +51,9 @@
             overflow-x: hidden;
         }
 
-        /* ===== SUBTLE BG DECORATION ===== */
         .bg-decoration {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             z-index: 0;
             pointer-events: none;
             overflow: hidden;
@@ -92,15 +85,14 @@
 
             0%,
             100% {
-                transform: translate(0, 0);
+                transform: translate(0, 0)
             }
 
             50% {
-                transform: translate(60px, -40px);
+                transform: translate(60px, -40px)
             }
         }
 
-        /* ===== MAIN CONTAINER ===== */
         .app-container {
             position: relative;
             z-index: 1;
@@ -110,7 +102,7 @@
             min-height: 100vh;
         }
 
-        /* ===== HEADER ===== */
+        /* HEADER */
         .header {
             text-align: center;
             margin-bottom: 40px;
@@ -120,12 +112,12 @@
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-20px)
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0)
             }
         }
 
@@ -165,12 +157,12 @@
             0%,
             100% {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1)
             }
 
             50% {
                 opacity: 0.5;
-                transform: scale(1.4);
+                transform: scale(1.4)
             }
         }
 
@@ -184,10 +176,46 @@
         .header p {
             color: var(--text-secondary);
             font-size: 0.95rem;
-            font-weight: 400;
         }
 
-        /* ===== BACK BUTTON ===== */
+        /* TOOLBAR */
+        .toolbar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tool-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tool-btn:hover {
+            background: var(--misagi-blue);
+            color: white;
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .tool-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* BACK BUTTON */
         .back-btn {
             display: none;
             align-items: center;
@@ -227,7 +255,7 @@
             display: inline-flex;
         }
 
-        /* ===== SEARCH BAR ===== */
+        /* SEARCH */
         .search-container {
             max-width: 460px;
             margin: 0 auto 32px;
@@ -265,14 +293,14 @@
             color: var(--text-muted);
         }
 
-        /* ===== DASHBOARD GRID ===== */
+        /* DASHBOARD GRID */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
 
-        /* ===== AREA CARDS ===== */
+        /* AREA CARDS */
         .area-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -312,41 +340,45 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(24px);
+                transform: translateY(24px)
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0)
             }
         }
 
         .area-card:nth-child(1) {
-            animation-delay: 0.03s;
+            animation-delay: .03s
         }
 
         .area-card:nth-child(2) {
-            animation-delay: 0.06s;
+            animation-delay: .06s
         }
 
         .area-card:nth-child(3) {
-            animation-delay: 0.09s;
+            animation-delay: .09s
         }
 
         .area-card:nth-child(4) {
-            animation-delay: 0.12s;
+            animation-delay: .12s
         }
 
         .area-card:nth-child(5) {
-            animation-delay: 0.15s;
+            animation-delay: .15s
         }
 
         .area-card:nth-child(6) {
-            animation-delay: 0.18s;
+            animation-delay: .18s
         }
 
         .area-card:nth-child(7) {
-            animation-delay: 0.21s;
+            animation-delay: .21s
+        }
+
+        .area-card:nth-child(8) {
+            animation-delay: .24s
         }
 
         .card-icon {
@@ -370,7 +402,6 @@
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 5px;
-            color: var(--text-primary);
         }
 
         .card-desc {
@@ -400,7 +431,7 @@
             transform: translateX(3px);
         }
 
-        /* ===== DETAIL VIEW ===== */
+        /* DETAIL VIEW */
         .detail-view {
             display: none;
             animation: fadeInUp 0.4s ease-out;
@@ -414,7 +445,7 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 32px;
+            margin-bottom: 12px;
         }
 
         .detail-icon {
@@ -440,7 +471,7 @@
             margin-top: 2px;
         }
 
-        /* Section groups */
+        /* SECTIONS */
         .section-group {
             margin-bottom: 28px;
         }
@@ -482,6 +513,16 @@
             transform: translateX(5px);
         }
 
+        .link-item.no-url {
+            opacity: 0.6;
+            cursor: default;
+        }
+
+        .link-item.no-url:hover {
+            transform: none;
+            box-shadow: var(--shadow-sm);
+        }
+
         .link-icon {
             width: 38px;
             height: 38px;
@@ -495,37 +536,37 @@
 
         .link-icon.sheets {
             background: rgba(52, 168, 83, 0.12);
-            color: #34a853;
+            color: #34a853
         }
 
         .link-icon.docs {
             background: rgba(66, 133, 244, 0.12);
-            color: #4285f4;
+            color: #4285f4
         }
 
         .link-icon.pdf {
             background: rgba(234, 67, 53, 0.12);
-            color: #ea4335;
+            color: #ea4335
         }
 
         .link-icon.slides {
             background: rgba(251, 188, 4, 0.12);
-            color: #f9ab00;
+            color: #f9ab00
         }
 
         .link-icon.folder {
             background: rgba(27, 58, 107, 0.1);
-            color: var(--misagi-blue);
+            color: var(--misagi-blue)
         }
 
         .link-icon.form {
             background: rgba(168, 85, 247, 0.12);
-            color: #7c3aed;
+            color: #7c3aed
         }
 
         .link-icon.link {
             background: rgba(45, 139, 85, 0.1);
-            color: var(--misagi-green);
+            color: var(--misagi-green)
         }
 
         .link-info {
@@ -555,123 +596,237 @@
             color: var(--misagi-blue);
         }
 
-        /* Delete button on links */
-        .link-delete {
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(239, 68, 68, 0.08);
-            color: #ef4444;
+        /* DELETE BTN on links */
+        .link-delete-btn {
+            background: none;
             border: none;
+            color: var(--text-muted);
             cursor: pointer;
-            font-size: 0.85rem;
+            padding: 6px;
+            border-radius: 8px;
             transition: var(--transition);
             flex-shrink: 0;
-            opacity: 0;
-        }
-
-        .link-item:hover .link-delete {
-            opacity: 1;
-        }
-
-        .link-delete:hover {
-            background: #ef4444;
-            color: white;
-        }
-
-        /* ===== ADD LINK BUTTON ===== */
-        .add-link-btn {
             display: flex;
             align-items: center;
-            justify-content: center;
+        }
+
+        .link-delete-btn:hover {
+            background: var(--danger-light);
+            color: var(--danger);
+        }
+
+        .link-delete-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ADD LINK BUTTON */
+        .add-link-btn {
+            display: inline-flex;
+            align-items: center;
             gap: 8px;
-            width: 100%;
-            padding: 14px;
-            background: transparent;
-            border: 2px dashed var(--border);
-            border-radius: var(--radius-xs);
-            color: var(--text-muted);
+            background: linear-gradient(135deg, var(--misagi-green), var(--misagi-green-light));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
             font-family: 'Inter', sans-serif;
             font-size: 0.88rem;
-            font-weight: 600;
-            cursor: pointer;
+            font-weight: 700;
             transition: var(--transition);
-            margin-top: 8px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
         }
 
         .add-link-btn:hover {
-            border-color: var(--misagi-green);
-            color: var(--misagi-green);
-            background: rgba(45, 139, 85, 0.04);
-        }
-
-        /* ===== MODAL ===== */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(4px);
-            z-index: 100;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.2s ease;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .modal {
-            background: var(--bg-secondary);
-            border-radius: var(--radius);
-            padding: 32px;
-            width: 90%;
-            max-width: 480px;
             box-shadow: var(--shadow-lg);
-            animation: slideUp 0.3s ease-out;
+            transform: translateY(-2px);
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ADD LINK FORM */
+        .add-form-card {
+            background: var(--bg-card);
+            border: 2px solid var(--misagi-green);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            animation: fadeInUp 0.3s ease-out;
+            display: none;
         }
 
-        .modal h3 {
-            font-size: 1.2rem;
+        .add-form-card.show {
+            display: block;
+        }
+
+        .add-form-card h3 {
+            font-size: 1rem;
             font-weight: 700;
             color: var(--misagi-blue);
-            margin-bottom: 20px;
-        }
-
-        .form-group {
             margin-bottom: 16px;
         }
 
-        .form-group label {
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .form-group.full {
+            grid-column: 1/-1;
+        }
+
+        .form-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input,
+        .form-select {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xs);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            border-color: var(--misagi-blue-light);
+            box-shadow: 0 0 0 3px rgba(27, 58, 107, 0.08);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .btn-submit {
+            padding: 10px 24px;
+            background: var(--misagi-green);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background: var(--misagi-green-light);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-cancel {
+            padding: 10px 24px;
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-cancel:hover {
+            background: var(--bg-secondary);
+            border-color: var(--border-hover);
+        }
+
+        /* LOADING & EMPTY */
+        .loading {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--misagi-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .loading p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .empty-state p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* SETUP WIZARD */
+        .setup-wizard {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .setup-wizard h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--misagi-blue);
+            margin-bottom: 8px;
+        }
+
+        .setup-wizard .sub {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .setup-wizard label {
             display: block;
             font-size: 0.8rem;
             font-weight: 600;
@@ -681,10 +836,9 @@
             letter-spacing: 0.5px;
         }
 
-        .form-group input,
-        .form-group select {
+        .setup-wizard input {
             width: 100%;
-            padding: 11px 14px;
+            padding: 12px 16px;
             border: 1px solid var(--border);
             border-radius: var(--radius-xs);
             font-family: 'Inter', sans-serif;
@@ -693,53 +847,68 @@
             background: var(--bg-primary);
             outline: none;
             transition: var(--transition);
+            margin-bottom: 20px;
         }
 
-        .form-group input:focus,
-        .form-group select:focus {
+        .setup-wizard input:focus {
             border-color: var(--misagi-blue-light);
             box-shadow: 0 0 0 3px rgba(27, 58, 107, 0.08);
         }
 
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 24px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 12px;
+        .setup-wizard .btn-save {
+            width: 100%;
+            padding: 14px;
+            background: var(--misagi-blue);
+            color: white;
+            border: none;
             border-radius: var(--radius-xs);
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 0.95rem;
+            font-weight: 700;
             cursor: pointer;
-            border: none;
             transition: var(--transition);
         }
 
-        .btn-primary {
-            background: var(--misagi-blue);
-            color: white;
-        }
-
-        .btn-primary:hover {
+        .setup-wizard .btn-save:hover {
             background: var(--misagi-blue-light);
             box-shadow: var(--shadow);
         }
 
-        .btn-secondary {
+        .setup-wizard .step {
+            margin-bottom: 16px;
+            padding: 12px 16px;
             background: var(--bg-primary);
+            border-radius: var(--radius-xs);
+        }
+
+        .setup-wizard .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--misagi-blue);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .setup-wizard .step p {
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            border: 1px solid var(--border);
+            margin-top: 6px;
+            line-height: 1.5;
         }
 
-        .btn-secondary:hover {
-            background: var(--border);
+        .setup-wizard .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 24px 0;
         }
 
-        /* ===== TOAST NOTIFICATION ===== */
+        /* TOAST */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -762,7 +931,7 @@
             opacity: 1;
         }
 
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         .footer {
             text-align: center;
             padding: 50px 0 16px;
@@ -770,8 +939,8 @@
             font-size: 0.75rem;
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
+        /* RESPONSIVE */
+        @media (max-width:768px) {
             .app-container {
                 padding: 20px 14px;
             }
@@ -797,30 +966,48 @@
                 font-size: 1.3rem;
             }
 
-            .modal {
-                padding: 24px;
-                width: 95%;
+            .setup-wizard {
+                padding: 24px 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
 <body>
-
     <div class="bg-decoration"></div>
-
     <div class="app-container">
-
-        <!-- HEADER -->
         <header class="header">
             <img src="logo.png" alt="MISAGI S.A.C." class="logo-img" id="logoImg">
-            <div class="badge">
-                <span class="dot"></span>
-                <span>Portal Interno</span>
-            </div>
+            <div class="badge"><span class="dot"></span><span>Portal Interno</span></div>
             <h1>Centro de Gestión Interna</h1>
             <p>Accede a todos los documentos y herramientas de tu área</p>
         </header>
+
+        <!-- TOOLBAR -->
+        <div class="toolbar" id="toolbar">
+            <button class="tool-btn" onclick="refreshData()" title="Refrescar datos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M23 4v6h-6" />
+                    <path d="M1 20v-6h6" />
+                    <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+                </svg>
+                Refrescar
+            </button>
+            <button class="tool-btn" onclick="renderSetupWizard()" title="Configuración">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                </svg>
+                Configuración
+            </button>
+        </div>
 
         <!-- BACK BUTTON -->
         <button class="back-btn" id="backBtn" onclick="showDashboard()">
@@ -842,406 +1029,374 @@
                 oninput="filterAreas(this.value)">
         </div>
 
-        <!-- DASHBOARD GRID -->
-        <div class="dashboard-grid" id="dashboardGrid"></div>
-
-        <!-- DETAIL VIEW -->
-        <div class="detail-view" id="detailView"></div>
+        <!-- MAIN CONTENT -->
+        <div id="mainContent"></div>
 
         <!-- FOOTER -->
         <footer class="footer">© 2026 MISAGI S.A.C. — Portal de Gestión Interna</footer>
-    </div>
-
-    <!-- MODAL FOR ADDING LINKS -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal">
-            <h3 id="modalTitle">➕ Agregar Enlace</h3>
-            <div class="form-group">
-                <label>Nombre del documento</label>
-                <input type="text" id="inputTitle" placeholder="Ej: Control de Asistencia">
-            </div>
-            <div class="form-group">
-                <label>URL (enlace de Google Drive)</label>
-                <input type="url" id="inputUrl" placeholder="https://docs.google.com/...">
-            </div>
-            <div class="form-group">
-                <label>Tipo de archivo</label>
-                <select id="inputType">
-                    <option value="sheets">📗 Google Sheets</option>
-                    <option value="docs">📘 Google Docs</option>
-                    <option value="pdf">📕 PDF</option>
-                    <option value="slides">📙 Google Slides</option>
-                    <option value="folder">📁 Carpeta de Drive</option>
-                    <option value="form">📝 Google Forms</option>
-                    <option value="link">🔗 Otro enlace</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Sección</label>
-                <input type="text" id="inputSection" placeholder="Ej: Reportes (dejar vacío = General)">
-            </div>
-            <div class="modal-actions">
-                <button class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
-                <button class="btn btn-primary" onclick="saveLink()">Guardar</button>
-            </div>
-        </div>
     </div>
 
     <!-- TOAST -->
     <div class="toast" id="toast"></div>
 
     <script>
-        /*  ╔═══════════════════════════════════════════════════════════════════╗
-            ║  📋  BASE DE DATOS — ÁREAS Y ENLACES DE MISAGI S.A.C.           ║
-            ║                                                                   ║
-            ║  ⚡ Los enlaces que agregues desde el portal se GUARDAN           ║
-            ║     automáticamente en tu navegador (localStorage).               ║
-            ║                                                                   ║
-            ║  Para cambiar las ÁREAS, edita el array "DEFAULT_DATA" abajo.    ║
-            ║  Para cambiar los ENLACES, usa los botones del portal.           ║
-            ╚═══════════════════════════════════════════════════════════════════╝  */
-
-        const DEFAULT_DATA = {
-            areas: [
-                {
-                    id: "operaciones",
-                    nombre: "Operaciones",
-                    icono: "⚙️",
-                    color: "#1b3a6b",
-                    descripcion: "Tareo, rooster, documentación y más",
-                    secciones: [
-                        {
-                            nombre: "General",
-                            enlaces: [
-                                { titulo: "Tareo", url: "", tipo: "sheets" },
-                                { titulo: "Rooster", url: "", tipo: "sheets" },
-                                { titulo: "Documentación", url: "", tipo: "folder" },
-                                { titulo: "Lavado y Engrase", url: "", tipo: "sheets" }
-                            ]
-                        },
-                        {
-                            nombre: "Comunicaciones",
-                            enlaces: [
-                                { titulo: "Memorándum", url: "", tipo: "docs" }
-                            ]
-                        },
-                        {
-                            nombre: "Planificación",
-                            enlaces: [
-                                { titulo: "Programación", url: "", tipo: "sheets" },
-                                { titulo: "Abastecimiento", url: "", tipo: "sheets" }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: "contabilidad",
-                    nombre: "Contabilidad",
-                    icono: "💰",
-                    color: "#2d8b55",
-                    descripcion: "Finanzas, cuentas y facturación",
-                    secciones: [
-                        {
-                            nombre: "General",
-                            enlaces: []
-                        }
-                    ]
-                },
-                {
-                    id: "comercial",
-                    nombre: "Comercial",
-                    icono: "📈",
-                    color: "#2a5298",
-                    descripcion: "Ventas y relaciones comerciales",
-                    secciones: [
-                        {
-                            nombre: "General",
-                            enlaces: []
-                        }
-                    ]
-                },
-                {
-                    id: "planeamiento",
-                    nombre: "Planeamiento y Control Presupuestal",
-                    icono: "📊",
-                    color: "#7c3aed",
-                    descripcion: "Presupuestos, indicadores y reportes",
-                    secciones: [
-                        {
-                            nombre: "General",
-                            enlaces: []
-                        }
-                    ]
-                },
-                {
-                    id: "mantenimiento",
-                    nombre: "Mantenimiento",
-                    icono: "🔧",
-                    color: "#d97706",
-                    descripcion: "Llantas, entregables y correctivos",
-                    secciones: [
-                        {
-                            nombre: "Seguimiento",
-                            enlaces: [
-                                { titulo: "Seguimiento de Llantas", url: "", tipo: "sheets" }
-                            ]
-                        },
-                        {
-                            nombre: "Entregables",
-                            enlaces: [
-                                { titulo: "Entregables Servosa", url: "", tipo: "sheets" }
-                            ]
-                        },
-                        {
-                            nombre: "Tipos de Mantenimiento",
-                            enlaces: [
-                                { titulo: "Mantenimiento Correctivo", url: "", tipo: "sheets" },
-                                { titulo: "Mantenimiento Preventivo", url: "", tipo: "sheets" }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: "sso",
-                    nombre: "Seguridad y Salud Ocupacional",
-                    icono: "🛡️",
-                    color: "#dc2626",
-                    descripcion: "SSO — Seguridad en el trabajo",
-                    secciones: [
-                        {
-                            nombre: "General",
-                            enlaces: []
-                        }
-                    ]
-                },
-                {
-                    id: "imagen",
-                    nombre: "Imagen Institucional",
-                    icono: "🎨",
-                    color: "#ec4899",
-                    descripcion: "Comunicación y marca corporativa",
-                    secciones: [
-                        {
-                            nombre: "General",
-                            enlaces: []
-                        }
-                    ]
-                }
-            ]
+        /* ===== CONFIG ===== */
+        const CONFIG_KEY = 'misagi_sheet_url';
+        const SCRIPT_KEY = 'misagi_script_url';
+        const AREAS_CONFIG = {
+            "Operaciones": { icono: "⚙️", color: "#1b3a6b", desc: "Tareo, rooster, documentación y más" },
+            "Contabilidad": { icono: "💰", color: "#2d8b55", desc: "Finanzas, cuentas y facturación" },
+            "Comercial": { icono: "📈", color: "#2a5298", desc: "Ventas y relaciones comerciales" },
+            "Planeamiento y Control Presupuestal": { icono: "📊", color: "#7c3aed", desc: "Presupuestos, indicadores y reportes" },
+            "Recursos Humanos": { icono: "👥", color: "#0891b2", desc: "Gestión del talento y personal" },
+            "Mantenimiento": { icono: "🔧", color: "#d97706", desc: "Llantas, entregables y correctivos" },
+            "Seguridad y Salud Ocupacional": { icono: "🛡️", color: "#dc2626", desc: "SSO — Seguridad en el trabajo" },
+            "Imagen Institucional": { icono: "🎨", color: "#ec4899", desc: "Comunicación y marca corporativa" }
         };
-
-        /* ===== TYPE CONFIG ===== */
         const TYPE_ICONS = { sheets: '📗', docs: '📘', pdf: '📕', slides: '📙', folder: '📁', form: '📝', link: '🔗' };
         const TYPE_LABELS = { sheets: 'Google Sheets', docs: 'Google Docs', pdf: 'PDF', slides: 'Google Slides', folder: 'Carpeta Drive', form: 'Google Forms', link: 'Enlace' };
 
-        /* ===== LOCAL STORAGE ===== */
-        const STORAGE_KEY = 'misagi_dashboard_data';
+        let APP_DATA = [];
+        let currentAreaName = null;
+        let sheetUrl = localStorage.getItem(CONFIG_KEY) || '';
+        let scriptUrl = localStorage.getItem(SCRIPT_KEY) || '';
+        let sheetEditUrl = '';
 
-        function loadData() {
-            const saved = localStorage.getItem(STORAGE_KEY);
-            if (saved) {
-                try { return JSON.parse(saved); } catch (e) { /* fall through */ }
+        /* ===== SHEET HELPERS ===== */
+        function extractSheetId(url) { const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/); return m ? m[1] : null; }
+
+        async function fetchSheetData() {
+            const id = extractSheetId(sheetUrl);
+            if (!id) return null;
+            sheetEditUrl = `https://docs.google.com/spreadsheets/d/${id}/edit`;
+            try {
+                const resp = await fetch(`https://docs.google.com/spreadsheets/d/${id}/pub?output=csv&cachebust=${Date.now()}`);
+                if (!resp.ok) throw new Error('No se pudo cargar');
+                return parseCSV(await resp.text());
+            } catch (e) { console.error(e); return null; }
+        }
+
+        function parseCSV(text) {
+            const lines = text.split('\n').map(l => l.trim()).filter(l => l);
+            if (lines.length < 2) return [];
+            const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase());
+            const rows = [];
+            for (let i = 1; i < lines.length; i++) {
+                const cols = parseCSVLine(lines[i]);
+                const row = {};
+                headers.forEach((h, idx) => { row[h] = (cols[idx] || '').trim(); });
+                if (row['area'] && row['titulo']) rows.push(row);
             }
-            return JSON.parse(JSON.stringify(DEFAULT_DATA));
+            return rows;
         }
 
-        function saveData() {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(APP_DATA));
+        function parseCSVLine(line) {
+            const result = []; let current = '', inQ = false;
+            for (let i = 0; i < line.length; i++) {
+                const ch = line[i];
+                if (inQ) { if (ch === '"') { if (i + 1 < line.length && line[i + 1] === '"') { current += '"'; i++ } else { inQ = false } } else { current += ch } }
+                else { if (ch === '"') { inQ = true } else if (ch === ',') { result.push(current); current = '' } else { current += ch } }
+            }
+            result.push(current); return result;
         }
 
-        let APP_DATA = loadData();
-        let currentAreaId = null;
+        function organizeData(rows) {
+            const areasMap = {};
+            Object.keys(AREAS_CONFIG).forEach(name => { areasMap[name] = { nombre: name, ...AREAS_CONFIG[name], secciones: {} }; });
+            rows.forEach(row => {
+                const areaName = row['area'], seccion = row['seccion'] || 'General', titulo = row['titulo'], url = row['url'] || '', tipo = row['tipo'] || 'link';
+                if (!areasMap[areaName]) areasMap[areaName] = { nombre: areaName, icono: '📂', color: '#64748b', desc: '', secciones: {} };
+                if (!areasMap[areaName].secciones[seccion]) areasMap[areaName].secciones[seccion] = [];
+                areasMap[areaName].secciones[seccion].push({ titulo, url, tipo });
+            });
+            return Object.values(areasMap);
+        }
+
+        function detectType(url, tipo) {
+            if (tipo && tipo !== '' && TYPE_ICONS[tipo]) return tipo;
+            if (!url) return 'link';
+            if (url.includes('spreadsheets')) return 'sheets';
+            if (url.includes('/document/')) return 'docs';
+            if (url.includes('/presentation/')) return 'slides';
+            if (url.includes('/forms/')) return 'form';
+            if (url.includes('/folders/')) return 'folder';
+            if (url.match(/\.pdf/i)) return 'pdf';
+            return 'link';
+        }
+
+        /* ===== APPS SCRIPT WRITE ===== */
+        async function sendToScript(payload) {
+            if (!scriptUrl) { showToast('⚠️ Configura la URL del Apps Script primero'); return false; }
+            try {
+                showToast('⏳ Guardando en Google Sheets...');
+                await fetch(scriptUrl, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+                // no-cors = opaque response, we assume success and re-fetch
+                await new Promise(r => setTimeout(r, 2000));
+                await loadAndRender();
+                showToast('✅ ¡Cambio guardado en Google Sheets!');
+                return true;
+            } catch (e) { console.error(e); showToast('❌ Error al guardar'); return false; }
+        }
+
+        async function addLinkToSheet(area, seccion, titulo, url, tipo) {
+            return sendToScript({ action: 'add', area, seccion, titulo, url, tipo });
+        }
+
+        async function deleteLinkFromSheet(area, titulo, url) {
+            return sendToScript({ action: 'delete', area, titulo, url });
+        }
+
+        /* ===== RENDER SETUP WIZARD ===== */
+        function renderSetupWizard() {
+            const main = document.getElementById('mainContent');
+            document.getElementById('searchContainer').style.display = 'none';
+            document.getElementById('toolbar').style.display = 'none';
+            document.getElementById('backBtn').classList.remove('visible');
+            currentAreaName = null;
+            main.innerHTML = `
+        <div class="setup-wizard">
+            <h2>⚙️ Configuración del Portal</h2>
+            <p class="sub">Conecta tu Google Sheet y el Apps Script para leer y escribir datos.</p>
+
+            <div class="step">
+                <span class="step-num">1</span><strong>Crea un Google Sheet</strong>
+                <p>Abre <a href="https://sheets.google.com" target="_blank" style="color:var(--misagi-blue);font-weight:600;">sheets.google.com</a> y crea una hoja con estas columnas en la <strong>fila 1</strong>:</p>
+                <p style="margin-top:8px;font-family:monospace;font-size:0.82rem;background:rgba(0,0,0,0.04);padding:8px 12px;border-radius:6px;">
+                    Area &nbsp;|&nbsp; Seccion &nbsp;|&nbsp; Titulo &nbsp;|&nbsp; URL &nbsp;|&nbsp; Tipo</p>
+            </div>
+            <div class="step">
+                <span class="step-num">2</span><strong>Publica el Sheet</strong>
+                <p><strong>Archivo → Compartir → Publicar en la web</strong> → "Todo el documento" → formato "Página web" → "Publicar".</p>
+            </div>
+            <div class="step">
+                <span class="step-num">3</span><strong>Crea el Apps Script</strong>
+                <p>En tu Sheet: <strong>Extensiones → Apps Script</strong>. Borra el código y pega el contenido del archivo <code>apps-script-code.js</code>.</p>
+                <p style="margin-top:6px;">Luego: <strong>Implementar → Nueva implementación</strong> → Tipo: <strong>Aplicación web</strong> → Ejecutar como: <strong>Yo</strong> → Acceso: <strong>Cualquier persona</strong> → <strong>Implementar</strong>.</p>
+            </div>
+
+            <hr class="divider">
+
+            <label>URL de tu Google Sheet (para leer datos)</label>
+            <input type="url" id="sheetUrlInput" placeholder="https://docs.google.com/spreadsheets/d/xxxxx/edit" value="${sheetUrl}">
+
+            <label>URL del Apps Script (para escribir datos)</label>
+            <input type="url" id="scriptUrlInput" placeholder="https://script.google.com/macros/s/xxxxx/exec" value="${scriptUrl}">
+
+            <button class="btn-save" onclick="saveConfig()">🚀 Conectar y Guardar</button>
+        </div>`;
+        }
 
         /* ===== RENDER DASHBOARD ===== */
-        function renderDashboard() {
-            const grid = document.getElementById('dashboardGrid');
-            grid.innerHTML = APP_DATA.areas.map(area => {
-                const totalLinks = area.secciones.reduce((sum, s) => sum + s.enlaces.length, 0);
+        function renderDashboard(areas) {
+            const main = document.getElementById('mainContent');
+            document.getElementById('searchContainer').style.display = 'block';
+            document.getElementById('toolbar').style.display = 'flex';
+            document.getElementById('backBtn').classList.remove('visible');
+            currentAreaName = null;
+            const grid = areas.map(area => {
+                const totalLinks = Object.values(area.secciones).reduce((s, links) => s + links.length, 0);
                 return `
-        <div class="area-card"
-             style="--card-accent: ${area.color}; --card-accent-bg: ${area.color}12;"
-             onclick="showArea('${area.id}')"
-             id="card-${area.id}">
+        <div class="area-card" style="--card-accent:${area.color};--card-accent-bg:${area.color}12;" onclick="showArea('${area.nombre.replace(/'/g, "\\'")}')" id="card-${area.nombre.replace(/\s+/g, '_')}">
             <div class="card-icon">${area.icono}</div>
             <div class="card-title">${area.nombre}</div>
-            <div class="card-desc">${area.descripcion} · ${totalLinks} enlace${totalLinks !== 1 ? 's' : ''}</div>
-            <div class="card-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </div>
+            <div class="card-desc">${area.desc || ''} · ${totalLinks} enlace${totalLinks !== 1 ? 's' : ''}</div>
+            <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
         </div>`;
             }).join('');
+            main.innerHTML = `<div class="dashboard-grid" id="dashboardGrid">${grid}</div>`;
+        }
+
+        function renderLoading() {
+            document.getElementById('mainContent').innerHTML = `<div class="loading"><div class="spinner"></div><p>Cargando datos del Google Sheet...</p></div>`;
         }
 
         /* ===== SHOW AREA DETAIL ===== */
-        function showArea(areaId) {
-            const area = APP_DATA.areas.find(a => a.id === areaId);
+        function showArea(areaName) {
+            const area = APP_DATA.find(a => a.nombre === areaName);
             if (!area) return;
-            currentAreaId = areaId;
+            currentAreaName = areaName;
+            const extIcon = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+            const delIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>`;
 
-            const detailView = document.getElementById('detailView');
-            const externalIcon = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
-
-            detailView.innerHTML = `
-        <div class="detail-header" style="--card-accent-bg: ${area.color}12;">
-            <div class="detail-icon" style="--card-accent-bg: ${area.color}12;">${area.icono}</div>
-            <div>
-                <div class="detail-title">${area.nombre}</div>
-                <div class="detail-subtitle">${area.descripcion}</div>
-            </div>
-        </div>
-        ${area.secciones.map((seccion, si) => `
-            <div class="section-group">
-                <div class="section-title">${seccion.nombre}</div>
-                <div class="links-list">
-                    ${seccion.enlaces.map((link, li) => {
-                const hasUrl = link.url && link.url.trim() !== '';
-                const tag = hasUrl ? 'a' : 'div';
-                const hrefAttr = hasUrl ? `href="${link.url}" target="_blank" rel="noopener noreferrer"` : '';
+            const sectionKeys = Object.keys(area.secciones);
+            const sectionsHTML = sectionKeys.map(secName => {
+                const links = area.secciones[secName];
+                if (!links.length) return '';
                 return `
-                        <${tag} class="link-item" ${hrefAttr} title="${hasUrl ? 'Abrir en nueva pestaña' : '⚠️ Sin URL — edita este enlace'}">
-                            <div class="link-icon ${link.tipo}">${TYPE_ICONS[link.tipo] || '📄'}</div>
-                            <div class="link-info">
-                                <div class="link-title">${link.titulo}${!hasUrl ? ' <span style="color:#f59e0b;font-size:0.75rem;">⚠ sin URL</span>' : ''}</div>
-                                <div class="link-type">${TYPE_LABELS[link.tipo] || link.tipo}</div>
-                            </div>
-                            <div class="link-external">${hasUrl ? externalIcon : ''}</div>
-                            <button class="link-delete" onclick="event.preventDefault();event.stopPropagation();deleteLink('${area.id}',${si},${li})" title="Eliminar">✕</button>
-                        </${tag}>`;
-            }).join('')}
-                </div>
-                <button class="add-link-btn" onclick="openModal('${area.id}', '${seccion.nombre}')">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                    Agregar enlace
-                </button>
+        <div class="section-group">
+            <div class="section-title">${secName}</div>
+            <div class="links-list">
+                ${links.map(link => {
+                    const tipo = detectType(link.url, link.tipo);
+                    const hasUrl = link.url && link.url.trim() !== '';
+                    const tag = hasUrl ? 'a' : 'div';
+                    const href = hasUrl ? `href="${link.url}" target="_blank" rel="noopener noreferrer"` : '';
+                    const noUrlClass = hasUrl ? '' : 'no-url';
+                    return `
+                <div style="display:flex;align-items:center;gap:4px;">
+                    <${tag} class="link-item ${noUrlClass}" ${href} style="flex:1;">
+                        <div class="link-icon ${tipo}">${TYPE_ICONS[tipo] || '📄'}</div>
+                        <div class="link-info">
+                            <div class="link-title">${link.titulo}${!hasUrl ? ' <span style="color:#f59e0b;font-size:0.72rem;">⚠ sin URL</span>' : ''}</div>
+                            <div class="link-type">${TYPE_LABELS[tipo] || tipo}</div>
+                        </div>
+                        <div class="link-external">${hasUrl ? extIcon : ''}</div>
+                    </${tag}>
+                    ${scriptUrl ? `<button class="link-delete-btn" onclick="handleDelete('${areaName.replace(/'/g, "\\'")}','${link.titulo.replace(/'/g, "\\'")}','${(link.url || '').replace(/'/g, "\\'")}')" title="Eliminar enlace">${delIcon}</button>` : ''}
+                </div>`;
+                }).join('')}
             </div>
-        `).join('')}
-        <button class="add-link-btn" onclick="openModal('${area.id}', '')" style="margin-top: 8px; border-color: var(--misagi-green); color: var(--misagi-green);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            Agregar enlace en nueva sección
-        </button>
-    `;
+        </div>`;
+            }).join('');
 
-            document.getElementById('dashboardGrid').style.display = 'none';
+            const emptyMsg = sectionKeys.length === 0 || Object.values(area.secciones).every(s => s.length === 0)
+                ? `<div class="empty-state"><div class="emoji">📭</div><p>Aún no hay enlaces en esta área.<br>Usa el botón "Agregar Enlace" para empezar.</p></div>` : '';
+
+            const main = document.getElementById('mainContent');
+            main.innerHTML = `
+        <div class="detail-view active">
+            <div class="detail-header" style="--card-accent-bg:${area.color}12;">
+                <div class="detail-icon" style="--card-accent-bg:${area.color}12;">${area.icono}</div>
+                <div>
+                    <div class="detail-title">${area.nombre}</div>
+                    <div class="detail-subtitle">${area.desc || ''}</div>
+                </div>
+            </div>
+
+            ${scriptUrl ? `<button class="add-link-btn" onclick="toggleAddForm()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Agregar Enlace
+            </button>` : `<a class="add-link-btn" href="${sheetEditUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                Editar en Google Sheets
+            </a>`}
+
+            <div class="add-form-card" id="addFormCard">
+                <h3>➕ Nuevo Enlace para ${area.nombre}</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Sección</label>
+                        <input class="form-input" id="fSeccion" placeholder="Ej: General, Seguimiento..." value="General">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tipo</label>
+                        <select class="form-select" id="fTipo">
+                            <option value="sheets">📗 Google Sheets</option>
+                            <option value="docs">📘 Google Docs</option>
+                            <option value="pdf">📕 PDF</option>
+                            <option value="slides">📙 Google Slides</option>
+                            <option value="folder">📁 Carpeta Drive</option>
+                            <option value="form">📝 Google Forms</option>
+                            <option value="link" selected>🔗 Enlace</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label class="form-label">Título del enlace</label>
+                        <input class="form-input" id="fTitulo" placeholder="Ej: Tareo Mensual, Control de Llantas...">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full">
+                        <label class="form-label">URL</label>
+                        <input class="form-input" id="fUrl" placeholder="https://docs.google.com/..." type="url">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn-submit" id="btnSubmitLink" onclick="handleAddLink()">Guardar Enlace</button>
+                    <button class="btn-cancel" onclick="toggleAddForm()">Cancelar</button>
+                </div>
+            </div>
+
+            ${sectionsHTML}
+            ${emptyMsg}
+        </div>`;
+
             document.getElementById('searchContainer').style.display = 'none';
-            detailView.classList.add('active');
+            document.getElementById('toolbar').style.display = 'none';
             document.getElementById('backBtn').classList.add('visible');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        /* ===== BACK TO DASHBOARD ===== */
-        function showDashboard() {
-            currentAreaId = null;
-            document.getElementById('detailView').classList.remove('active');
-            document.getElementById('dashboardGrid').style.display = 'grid';
-            document.getElementById('searchContainer').style.display = 'block';
-            document.getElementById('backBtn').classList.remove('visible');
-            renderDashboard();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        /* ===== FORM HANDLERS ===== */
+        function toggleAddForm() {
+            const f = document.getElementById('addFormCard');
+            f.classList.toggle('show');
         }
 
-        /* ===== SEARCH ===== */
+        async function handleAddLink() {
+            const titulo = document.getElementById('fTitulo').value.trim();
+            const url = document.getElementById('fUrl').value.trim();
+            const seccion = document.getElementById('fSeccion').value.trim() || 'General';
+            const tipo = document.getElementById('fTipo').value;
+            if (!titulo) { showToast('⚠️ Escribe un título para el enlace'); return; }
+            document.getElementById('btnSubmitLink').disabled = true;
+            const ok = await addLinkToSheet(currentAreaName, seccion, titulo, url, tipo);
+            document.getElementById('btnSubmitLink').disabled = false;
+            if (ok && currentAreaName) showArea(currentAreaName);
+        }
+
+        async function handleDelete(area, titulo, url) {
+            if (!confirm(`¿Eliminar "${titulo}" de ${area}?`)) return;
+            const ok = await deleteLinkFromSheet(area, titulo, url);
+            if (ok && currentAreaName) showArea(currentAreaName);
+        }
+
+        /* ===== NAVIGATION ===== */
+        function showDashboard() { renderDashboard(APP_DATA); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
         function filterAreas(query) {
             const q = query.toLowerCase().trim();
-            APP_DATA.areas.forEach(area => {
-                const card = document.getElementById(`card-${area.id}`);
+            APP_DATA.forEach(area => {
+                const card = document.getElementById(`card-${area.nombre.replace(/\s+/g, '_')}`);
                 if (!card) return;
-                const match = area.nombre.toLowerCase().includes(q) || area.descripcion.toLowerCase().includes(q);
-                card.style.display = match ? '' : 'none';
+                card.style.display = (area.nombre.toLowerCase().includes(q) || (area.desc || '').toLowerCase().includes(q)) ? '' : 'none';
             });
         }
 
-        /* ===== MODAL: ADD LINK ===== */
-        let modalAreaId = null;
-        let modalSection = null;
-
-        function openModal(areaId, sectionName) {
-            modalAreaId = areaId;
-            modalSection = sectionName;
-            document.getElementById('inputTitle').value = '';
-            document.getElementById('inputUrl').value = '';
-            document.getElementById('inputType').value = 'sheets';
-            document.getElementById('inputSection').value = sectionName || '';
-            document.getElementById('modalTitle').textContent = '➕ Agregar Enlace';
-            document.getElementById('modalOverlay').classList.add('active');
-            setTimeout(() => document.getElementById('inputTitle').focus(), 200);
+        /* ===== CONFIG ===== */
+        async function saveConfig() {
+            const sUrl = document.getElementById('sheetUrlInput').value.trim();
+            const scUrl = document.getElementById('scriptUrlInput').value.trim();
+            if (!sUrl) { showToast('⚠️ Pega la URL de tu Google Sheet'); return; }
+            if (!extractSheetId(sUrl)) { showToast('⚠️ URL de Sheet no válida'); return; }
+            sheetUrl = sUrl;
+            localStorage.setItem(CONFIG_KEY, sUrl);
+            if (scUrl) { scriptUrl = scUrl; localStorage.setItem(SCRIPT_KEY, scUrl); }
+            showToast('✅ Configuración guardada. Cargando...');
+            await loadAndRender();
         }
 
-        function closeModal() {
-            document.getElementById('modalOverlay').classList.remove('active');
-            modalAreaId = null;
-            modalSection = null;
+        async function loadAndRender() {
+            renderLoading();
+            const rows = await fetchSheetData();
+            if (rows === null) { showToast('❌ No se pudo cargar el Sheet. ¿Lo publicaste?'); renderSetupWizard(); return; }
+            APP_DATA = organizeData(rows);
+            renderDashboard(APP_DATA);
+            showToast(`✅ ${rows.length} enlaces cargados`);
         }
 
-        function saveLink() {
-            const titulo = document.getElementById('inputTitle').value.trim();
-            const url = document.getElementById('inputUrl').value.trim();
-            const tipo = document.getElementById('inputType').value;
-            const secNom = document.getElementById('inputSection').value.trim() || 'General';
-
-            if (!titulo) { showToast('⚠️ Escribe un nombre para el documento'); return; }
-
-            const area = APP_DATA.areas.find(a => a.id === modalAreaId);
-            if (!area) return;
-
-            // Find or create section
-            let section = area.secciones.find(s => s.nombre.toLowerCase() === secNom.toLowerCase());
-            if (!section) {
-                section = { nombre: secNom, enlaces: [] };
-                area.secciones.push(section);
-            }
-
-            section.enlaces.push({ titulo, url, tipo });
-            saveData();
-            closeModal();
-            showArea(modalAreaId);
-            showToast('✅ Enlace agregado correctamente');
-        }
-
-        /* ===== DELETE LINK ===== */
-        function deleteLink(areaId, sectionIndex, linkIndex) {
-            if (!confirm('¿Eliminar este enlace?')) return;
-            const area = APP_DATA.areas.find(a => a.id === areaId);
-            if (!area) return;
-            area.secciones[sectionIndex].enlaces.splice(linkIndex, 1);
-            // Remove empty non-General sections
-            if (area.secciones[sectionIndex].enlaces.length === 0 && area.secciones[sectionIndex].nombre !== 'General') {
-                area.secciones.splice(sectionIndex, 1);
-            }
-            saveData();
-            showArea(areaId);
-            showToast('🗑️ Enlace eliminado');
+        async function refreshData() {
+            if (!sheetUrl) { showToast('⚠️ Configura el Google Sheet primero'); return; }
+            await loadAndRender();
         }
 
         /* ===== TOAST ===== */
-        function showToast(msg) {
-            const t = document.getElementById('toast');
-            t.textContent = msg;
-            t.classList.add('show');
-            setTimeout(() => t.classList.remove('show'), 2500);
-        }
+        function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3500); }
 
-        /* ===== CLOSE MODAL ON OVERLAY CLICK ===== */
-        document.getElementById('modalOverlay').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) closeModal();
-        });
-
-        /* ===== KEYBOARD: ESC TO CLOSE ===== */
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') {
-                if (document.getElementById('modalOverlay').classList.contains('active')) closeModal();
-                else if (currentAreaId) showDashboard();
-            }
-        });
+        /* ===== KEYBOARD ===== */
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && currentAreaName) showDashboard(); });
 
         /* ===== LOGO FALLBACK ===== */
-        document.getElementById('logoImg').onerror = function () {
-            this.style.display = 'none';
-        };
+        document.getElementById('logoImg').onerror = function () { this.style.display = 'none'; };
 
         /* ===== INIT ===== */
-        renderDashboard();
+        (async function init() {
+            if (sheetUrl && extractSheetId(sheetUrl)) { await loadAndRender(); }
+            else { renderSetupWizard(); }
+        })();
     </script>
-
 </body>
 
 </html>
