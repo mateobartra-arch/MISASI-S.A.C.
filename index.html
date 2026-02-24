@@ -1162,11 +1162,23 @@
         async function sendToScript(payload) {
             if (!scriptUrl) { showToast('⚠️ Configura la URL del Apps Script en ⚙️ Configuración'); return false; }
             try {
+                // Save current area before refresh
+                const returnToArea = currentAreaName;
                 showToast('⏳ Guardando en Google Sheets...');
                 await fetch(scriptUrl, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
                 // Wait for Google to process, then re-fetch fresh data
                 await new Promise(r => setTimeout(r, 2500));
-                await loadAndRender();
+                // Refresh data
+                const rows = await fetchSheetData();
+                if (rows !== null) {
+                    APP_DATA = organizeData(rows);
+                }
+                // Navigate back to the area the user was in
+                if (returnToArea) {
+                    showArea(returnToArea);
+                } else {
+                    renderDashboard(APP_DATA);
+                }
                 showToast('✅ ¡Cambio guardado en Google Sheets!');
                 return true;
             } catch (e) { console.error(e); showToast('❌ Error al guardar'); return false; }
