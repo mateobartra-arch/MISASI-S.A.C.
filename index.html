@@ -16,7 +16,7 @@
         *::after {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
         :root {
@@ -40,7 +40,7 @@
             --radius-xs: 10px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --danger: #dc2626;
-            --danger-light: #fef2f2;
+            --danger-light: #fef2f2
         }
 
         body {
@@ -48,7 +48,7 @@
             background: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
-            overflow-x: hidden;
+            overflow-x: hidden
         }
 
         .bg-decoration {
@@ -56,7 +56,7 @@
             inset: 0;
             z-index: 0;
             pointer-events: none;
-            overflow: hidden;
+            overflow: hidden
         }
 
         .bg-decoration::before {
@@ -67,7 +67,7 @@
             background: radial-gradient(circle, rgba(27, 58, 107, 0.06) 0%, transparent 70%);
             top: -300px;
             right: -200px;
-            animation: floatBg 25s ease-in-out infinite;
+            animation: floatBg 25s ease-in-out infinite
         }
 
         .bg-decoration::after {
@@ -78,7 +78,7 @@
             background: radial-gradient(circle, rgba(45, 139, 85, 0.05) 0%, transparent 70%);
             bottom: -200px;
             left: -150px;
-            animation: floatBg 30s ease-in-out infinite reverse;
+            animation: floatBg 30s ease-in-out infinite reverse
         }
 
         @keyframes floatBg {
@@ -99,14 +99,13 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 32px 24px;
-            min-height: 100vh;
+            min-height: 100vh
         }
 
-        /* HEADER */
         .header {
             text-align: center;
             margin-bottom: 40px;
-            animation: fadeInDown 0.6s ease-out;
+            animation: fadeInDown 0.6s ease-out
         }
 
         @keyframes fadeInDown {
@@ -125,7 +124,7 @@
             width: 160px;
             height: auto;
             margin-bottom: 12px;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1))
         }
 
         .header .badge {
@@ -141,7 +140,7 @@
             color: var(--misagi-blue);
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 16px;
+            margin-bottom: 16px
         }
 
         .header .badge .dot {
@@ -149,7 +148,7 @@
             height: 7px;
             background: var(--misagi-green);
             border-radius: 50%;
-            animation: pulseDot 2s ease-in-out infinite;
+            animation: pulseDot 2s ease-in-out infinite
         }
 
         @keyframes pulseDot {
@@ -170,20 +169,19 @@
             font-size: clamp(1.6rem, 4vw, 2.4rem);
             font-weight: 800;
             color: var(--misagi-blue);
-            margin-bottom: 4px;
+            margin-bottom: 4px
         }
 
         .header p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 0.95rem
         }
 
-        /* TOOLBAR */
         .toolbar {
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 20px
         }
 
         .tool-btn {
@@ -200,22 +198,21 @@
             font-family: 'Inter', sans-serif;
             font-weight: 600;
             transition: var(--transition);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-sm)
         }
 
         .tool-btn:hover {
             background: var(--misagi-blue);
             color: white;
             box-shadow: var(--shadow);
-            transform: translateY(-2px);
+            transform: translateY(-2px)
         }
 
         .tool-btn svg {
             width: 16px;
-            height: 16px;
+            height: 16px
         }
 
-        /* BACK BUTTON */
         .back-btn {
             display: none;
             align-items: center;
@@ -231,35 +228,34 @@
             font-weight: 600;
             transition: var(--transition);
             margin-bottom: 28px;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-sm)
         }
 
         .back-btn:hover {
             background: var(--misagi-blue);
             color: white;
             transform: translateX(-4px);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow)
         }
 
         .back-btn svg {
             width: 18px;
             height: 18px;
-            transition: var(--transition);
+            transition: var(--transition)
         }
 
         .back-btn:hover svg {
-            transform: translateX(-3px);
+            transform: translateX(-3px)
         }
 
         .back-btn.visible {
-            display: inline-flex;
+            display: inline-flex
         }
 
-        /* SEARCH */
         .search-container {
             max-width: 460px;
             margin: 0 auto 32px;
-            position: relative;
+            position: relative
         }
 
         .search-input {
@@ -273,16 +269,16 @@
             font-size: 0.92rem;
             outline: none;
             transition: var(--transition);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-sm)
         }
 
         .search-input::placeholder {
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
         .search-input:focus {
             border-color: var(--misagi-blue-light);
-            box-shadow: 0 0 0 3px rgba(27, 58, 107, 0.1);
+            box-shadow: 0 0 0 3px rgba(27, 58, 107, 0.1)
         }
 
         .search-icon {
@@ -290,17 +286,15 @@
             left: 16px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
-        /* DASHBOARD GRID */
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 20px
         }
 
-        /* AREA CARDS */
         .area-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -311,7 +305,7 @@
             position: relative;
             overflow: hidden;
             box-shadow: var(--shadow-sm);
-            animation: fadeInUp 0.5s ease-out both;
+            animation: fadeInUp 0.5s ease-out both
         }
 
         .area-card::before {
@@ -324,17 +318,17 @@
             background: var(--card-accent);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease
         }
 
         .area-card:hover {
             transform: translateY(-4px);
             border-color: var(--border-hover);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-lg)
         }
 
         .area-card:hover::before {
-            transform: scaleX(1);
+            transform: scaleX(1)
         }
 
         @keyframes fadeInUp {
@@ -391,23 +385,23 @@
             font-size: 1.5rem;
             margin-bottom: 16px;
             background: var(--card-accent-bg);
-            transition: var(--transition);
+            transition: var(--transition)
         }
 
         .area-card:hover .card-icon {
-            transform: scale(1.08) rotate(-2deg);
+            transform: scale(1.08) rotate(-2deg)
         }
 
         .card-title {
             font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 5px
         }
 
         .card-desc {
             font-size: 0.82rem;
             color: var(--text-muted);
-            line-height: 1.4;
+            line-height: 1.4
         }
 
         .card-arrow {
@@ -422,30 +416,29 @@
             border-radius: 50%;
             background: var(--bg-primary);
             color: var(--text-muted);
-            transition: var(--transition);
+            transition: var(--transition)
         }
 
         .area-card:hover .card-arrow {
             background: var(--card-accent);
             color: white;
-            transform: translateX(3px);
+            transform: translateX(3px)
         }
 
-        /* DETAIL VIEW */
         .detail-view {
             display: none;
-            animation: fadeInUp 0.4s ease-out;
+            animation: fadeInUp 0.4s ease-out
         }
 
         .detail-view.active {
-            display: block;
+            display: block
         }
 
         .detail-header {
             display: flex;
             align-items: center;
             gap: 16px;
-            margin-bottom: 12px;
+            margin-bottom: 12px
         }
 
         .detail-icon {
@@ -456,24 +449,23 @@
             justify-content: center;
             border-radius: 16px;
             font-size: 1.8rem;
-            background: var(--card-accent-bg);
+            background: var(--card-accent-bg)
         }
 
         .detail-title {
             font-size: 1.6rem;
             font-weight: 800;
-            color: var(--misagi-blue);
+            color: var(--misagi-blue)
         }
 
         .detail-subtitle {
             color: var(--text-muted);
             font-size: 0.85rem;
-            margin-top: 2px;
+            margin-top: 2px
         }
 
-        /* SECTIONS */
         .section-group {
-            margin-bottom: 28px;
+            margin-bottom: 28px
         }
 
         .section-title {
@@ -483,13 +475,13 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 12px;
-            padding-left: 2px;
+            padding-left: 2px
         }
 
         .links-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 8px
         }
 
         .link-item {
@@ -504,23 +496,23 @@
             color: var(--text-primary);
             transition: var(--transition);
             cursor: pointer;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-sm)
         }
 
         .link-item:hover {
             border-color: var(--border-hover);
             box-shadow: var(--shadow);
-            transform: translateX(5px);
+            transform: translateX(5px)
         }
 
         .link-item.no-url {
             opacity: 0.6;
-            cursor: default;
+            cursor: default
         }
 
         .link-item.no-url:hover {
             transform: none;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-sm)
         }
 
         .link-icon {
@@ -531,7 +523,7 @@
             justify-content: center;
             border-radius: 10px;
             font-size: 1rem;
-            flex-shrink: 0;
+            flex-shrink: 0
         }
 
         .link-icon.sheets {
@@ -570,33 +562,32 @@
         }
 
         .link-info {
-            flex: 1;
+            flex: 1
         }
 
         .link-title {
             font-weight: 600;
             font-size: 0.9rem;
-            margin-bottom: 1px;
+            margin-bottom: 1px
         }
 
         .link-type {
             font-size: 0.73rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.5px
         }
 
         .link-external {
             color: var(--text-muted);
             transition: var(--transition);
-            flex-shrink: 0;
+            flex-shrink: 0
         }
 
         .link-item:hover .link-external {
-            color: var(--misagi-blue);
+            color: var(--misagi-blue)
         }
 
-        /* DELETE BTN on links */
         .link-delete-btn {
             background: none;
             border: none;
@@ -607,20 +598,19 @@
             transition: var(--transition);
             flex-shrink: 0;
             display: flex;
-            align-items: center;
+            align-items: center
         }
 
         .link-delete-btn:hover {
             background: var(--danger-light);
-            color: var(--danger);
+            color: var(--danger)
         }
 
         .link-delete-btn svg {
             width: 16px;
-            height: 16px;
+            height: 16px
         }
 
-        /* ADD LINK BUTTON */
         .add-link-btn {
             display: inline-flex;
             align-items: center;
@@ -636,15 +626,14 @@
             font-weight: 700;
             transition: var(--transition);
             margin-bottom: 24px;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-sm)
         }
 
         .add-link-btn:hover {
             box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
+            transform: translateY(-2px)
         }
 
-        /* ADD LINK FORM */
         .add-form-card {
             background: var(--bg-card);
             border: 2px solid var(--misagi-green);
@@ -653,35 +642,35 @@
             margin-bottom: 24px;
             box-shadow: var(--shadow);
             animation: fadeInUp 0.3s ease-out;
-            display: none;
+            display: none
         }
 
         .add-form-card.show {
-            display: block;
+            display: block
         }
 
         .add-form-card h3 {
             font-size: 1rem;
             font-weight: 700;
             color: var(--misagi-blue);
-            margin-bottom: 16px;
+            margin-bottom: 16px
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin-bottom: 12px;
+            margin-bottom: 12px
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 4px
         }
 
         .form-group.full {
-            grid-column: 1/-1;
+            grid-column: 1/-1
         }
 
         .form-label {
@@ -689,7 +678,7 @@
             font-weight: 600;
             color: var(--text-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.5px
         }
 
         .form-input,
@@ -702,19 +691,19 @@
             color: var(--text-primary);
             background: var(--bg-primary);
             outline: none;
-            transition: var(--transition);
+            transition: var(--transition)
         }
 
         .form-input:focus,
         .form-select:focus {
             border-color: var(--misagi-blue-light);
-            box-shadow: 0 0 0 3px rgba(27, 58, 107, 0.08);
+            box-shadow: 0 0 0 3px rgba(27, 58, 107, 0.08)
         }
 
         .form-actions {
             display: flex;
             gap: 10px;
-            margin-top: 16px;
+            margin-top: 16px
         }
 
         .btn-submit {
@@ -727,17 +716,17 @@
             font-size: 0.85rem;
             font-weight: 700;
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition)
         }
 
         .btn-submit:hover {
             background: var(--misagi-green-light);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow)
         }
 
         .btn-submit:disabled {
             opacity: 0.5;
-            cursor: not-allowed;
+            cursor: not-allowed
         }
 
         .btn-cancel {
@@ -750,18 +739,17 @@
             font-size: 0.85rem;
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition)
         }
 
         .btn-cancel:hover {
             background: var(--bg-secondary);
-            border-color: var(--border-hover);
+            border-color: var(--border-hover)
         }
 
-        /* LOADING & EMPTY */
         .loading {
             text-align: center;
-            padding: 80px 20px;
+            padding: 80px 20px
         }
 
         .spinner {
@@ -771,7 +759,7 @@
             border-top-color: var(--misagi-blue);
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
-            margin: 0 auto 16px;
+            margin: 0 auto 16px
         }
 
         @keyframes spin {
@@ -782,26 +770,25 @@
 
         .loading p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.9rem
         }
 
         .empty-state {
             text-align: center;
             padding: 40px 20px;
-            color: var(--text-muted);
+            color: var(--text-muted)
         }
 
         .empty-state .emoji {
             font-size: 2.5rem;
-            margin-bottom: 12px;
+            margin-bottom: 12px
         }
 
         .empty-state p {
             font-size: 0.9rem;
-            line-height: 1.5;
+            line-height: 1.5
         }
 
-        /* SETUP WIZARD */
         .setup-wizard {
             max-width: 650px;
             margin: 0 auto;
@@ -809,21 +796,21 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 36px 32px;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow)
         }
 
         .setup-wizard h2 {
             font-size: 1.4rem;
             font-weight: 800;
             color: var(--misagi-blue);
-            margin-bottom: 8px;
+            margin-bottom: 8px
         }
 
         .setup-wizard .sub {
             color: var(--text-secondary);
             font-size: 0.9rem;
             margin-bottom: 24px;
-            line-height: 1.5;
+            line-height: 1.5
         }
 
         .setup-wizard label {
@@ -833,7 +820,7 @@
             color: var(--text-secondary);
             margin-bottom: 6px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.5px
         }
 
         .setup-wizard input {
@@ -847,12 +834,12 @@
             background: var(--bg-primary);
             outline: none;
             transition: var(--transition);
-            margin-bottom: 20px;
+            margin-bottom: 20px
         }
 
         .setup-wizard input:focus {
             border-color: var(--misagi-blue-light);
-            box-shadow: 0 0 0 3px rgba(27, 58, 107, 0.08);
+            box-shadow: 0 0 0 3px rgba(27, 58, 107, 0.08)
         }
 
         .setup-wizard .btn-save {
@@ -866,19 +853,19 @@
             font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition)
         }
 
         .setup-wizard .btn-save:hover {
             background: var(--misagi-blue-light);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow)
         }
 
         .setup-wizard .step {
             margin-bottom: 16px;
             padding: 12px 16px;
             background: var(--bg-primary);
-            border-radius: var(--radius-xs);
+            border-radius: var(--radius-xs)
         }
 
         .setup-wizard .step-num {
@@ -892,23 +879,22 @@
             color: white;
             font-size: 0.75rem;
             font-weight: 700;
-            margin-right: 8px;
+            margin-right: 8px
         }
 
         .setup-wizard .step p {
             font-size: 0.85rem;
             color: var(--text-secondary);
             margin-top: 6px;
-            line-height: 1.5;
+            line-height: 1.5
         }
 
         .setup-wizard .divider {
             border: none;
             border-top: 1px solid var(--border);
-            margin: 24px 0;
+            margin: 24px 0
         }
 
-        /* TOAST */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -923,55 +909,265 @@
             z-index: 200;
             transform: translateY(100px);
             opacity: 0;
-            transition: all 0.4s ease;
+            transition: all 0.4s ease
         }
 
         .toast.show {
             transform: translateY(0);
-            opacity: 1;
+            opacity: 1
         }
 
-        /* FOOTER */
         .footer {
             text-align: center;
             padding: 50px 0 16px;
             color: var(--text-muted);
-            font-size: 0.75rem;
+            font-size: 0.75rem
         }
 
-        /* RESPONSIVE */
-        @media (max-width:768px) {
+        @media(max-width:768px) {
             .app-container {
-                padding: 20px 14px;
+                padding: 20px 14px
             }
 
             .dashboard-grid {
                 grid-template-columns: 1fr;
-                gap: 14px;
+                gap: 14px
             }
 
             .area-card {
-                padding: 22px 18px;
+                padding: 22px 18px
             }
 
             .header {
-                margin-bottom: 28px;
+                margin-bottom: 28px
             }
 
             .header .logo-img {
-                width: 120px;
+                width: 120px
             }
 
             .detail-title {
-                font-size: 1.3rem;
+                font-size: 1.3rem
             }
 
             .setup-wizard {
-                padding: 24px 18px;
+                padding: 24px 18px
             }
 
             .form-row {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* === ACCESS MODAL === */
+        .access-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px
+        }
+
+        .access-overlay.show {
+            opacity: 1
+        }
+
+        .access-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(27, 58, 107, 0.12);
+            border-radius: 24px;
+            padding: 40px 36px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)
+        }
+
+        .access-overlay.show .access-card {
+            transform: scale(1) translateY(0)
+        }
+
+        .access-lock {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            animation: lockPulse 2s ease-in-out infinite
+        }
+
+        @keyframes lockPulse {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.1)
+            }
+        }
+
+        .access-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--misagi-blue);
+            margin-bottom: 6px
+        }
+
+        .access-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            line-height: 1.5
+        }
+
+        .access-input-group {
+            text-align: left;
+            margin-bottom: 20px
+        }
+
+        .access-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px
+        }
+
+        .access-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            outline: none;
+            transition: all 0.3s ease
+        }
+
+        .access-input:focus {
+            border-color: var(--misagi-blue);
+            box-shadow: 0 0 0 4px rgba(27, 58, 107, 0.1)
+        }
+
+        .access-input.shake {
+            animation: shakeInput 0.4s ease
+        }
+
+        @keyframes shakeInput {
+
+            0%,
+            100% {
+                transform: translateX(0)
+            }
+
+            20% {
+                transform: translateX(-8px)
+            }
+
+            40% {
+                transform: translateX(8px)
+            }
+
+            60% {
+                transform: translateX(-5px)
+            }
+
+            80% {
+                transform: translateX(5px)
+            }
+        }
+
+        .access-error {
+            color: #dc2626;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-top: 8px;
+            min-height: 20px
+        }
+
+        .access-actions {
+            display: flex;
+            gap: 10px
+        }
+
+        .access-btn-cancel {
+            flex: 1;
+            padding: 13px;
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease
+        }
+
+        .access-btn-cancel:hover {
+            background: #e2e8f0
+        }
+
+        .access-btn-submit {
+            flex: 1.5;
+            padding: 13px;
+            background: linear-gradient(135deg, var(--misagi-blue), var(--misagi-blue-light));
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(27, 58, 107, 0.3)
+        }
+
+        .access-btn-submit:hover {
+            box-shadow: 0 6px 20px rgba(27, 58, 107, 0.4);
+            transform: translateY(-1px)
+        }
+
+        .card-lock {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(27, 58, 107, 0.08);
+            border-radius: 50%;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            transition: all 0.3s ease
+        }
+
+        .area-card:hover .card-lock {
+            opacity: 1;
+            background: rgba(27, 58, 107, 0.12)
+        }
+
+        @media(max-width:768px) {
+            .access-card {
+                padding: 28px 22px
+            }
+
+            .access-title {
+                font-size: 1.2rem
             }
         }
     </style>
@@ -987,7 +1183,6 @@
             <p>Accede a todos los documentos y herramientas de tu área</p>
         </header>
 
-        <!-- TOOLBAR -->
         <div class="toolbar" id="toolbar">
             <button class="tool-btn" onclick="refreshData()" title="Refrescar datos">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -998,7 +1193,7 @@
                 </svg>
                 Refrescar
             </button>
-            <button class="tool-btn" onclick="renderSetupWizard()" title="Configuración">
+            <button class="tool-btn" onclick="handleConfigClick()" title="Configuración">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
                     <circle cx="12" cy="12" r="3" />
@@ -1009,7 +1204,6 @@
             </button>
         </div>
 
-        <!-- BACK BUTTON -->
         <button class="back-btn" id="backBtn" onclick="showDashboard()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -1018,7 +1212,6 @@
             Volver al Dashboard
         </button>
 
-        <!-- SEARCH -->
         <div class="search-container" id="searchContainer">
             <svg class="search-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1029,14 +1222,10 @@
                 oninput="filterAreas(this.value)">
         </div>
 
-        <!-- MAIN CONTENT -->
         <div id="mainContent"></div>
-
-        <!-- FOOTER -->
         <footer class="footer">© 2026 MISAGI S.A.C. — Portal de Gestión Interna</footer>
     </div>
 
-    <!-- TOAST -->
     <div class="toast" id="toast"></div>
 
     <script>
@@ -1056,10 +1245,6 @@
         const TYPE_ICONS = { sheets: '📗', docs: '📘', pdf: '📕', slides: '📙', folder: '📁', form: '📝', link: '🔗' };
         const TYPE_LABELS = { sheets: 'Google Sheets', docs: 'Google Docs', pdf: 'PDF', slides: 'Google Slides', folder: 'Carpeta Drive', form: 'Google Forms', link: 'Enlace' };
 
-        /* ══════════════════════════════════════════════════════
-           CONFIGURACIÓN — Pega tus URLs aquí para que
-           todos los dispositivos se conecten automáticamente.
-           ══════════════════════════════════════════════════════ */
         const DEFAULT_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTdZ3PHis1B2Vdelx2qyY0frKgyDhZOJKSqb5cLRaqgrB2b6ep8gslepHKO4syCV4foQWxXahQPuwEa/pubhtml';
         const DEFAULT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwFeduej4rTjmB8LUACWiuLB6BIvrrJUZG9eDFIO7HwhRv0xHhvsW6XCdHud0IWDIjA/exec';
 
@@ -1069,134 +1254,80 @@
         let scriptUrl = localStorage.getItem(SCRIPT_KEY) || DEFAULT_SCRIPT_URL;
         let sheetEditUrl = '';
 
-        /* ===== SHEET HELPERS ===== */
-        function extractSheetId(url) { const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/); return m ? m[1] : null; }
+        /* ===== MODULE ACCESS VERIFICATION (SHA-256 integrity tokens) ===== */
+        const _rt = {
+            'Configuración': '7c9efc94cbec5122fc59dd5553855171a2e8c89d6397a190cc9d5ce9c12b10a1',
+            'Contabilidad': '853474039d038d8077f371b4cc67226d6eaad8ba79e399ec47aeec7544e5f589',
+            'Recursos Humanos': 'f5b6abca0f44a9a62fe2f1c3e036dedf98348a636b2b3dabecddc382ecaadbc8'
+        };
+        const _sk = 'misagi_rt_cache';
+        function _gc() { try { return JSON.parse(sessionStorage.getItem(_sk) || '{}') } catch { return {} } }
+        function _sc(n) { const s = _gc(); s[n] = Date.now(); sessionStorage.setItem(_sk, JSON.stringify(s)) }
+        function _ic(n) { return !!_gc()[n] }
+        async function _hash(v) { const d = new TextEncoder().encode(v); const b = await crypto.subtle.digest('SHA-256', d); return Array.from(new Uint8Array(b)).map(x => x.toString(16).padStart(2, '0')).join('') }
 
-        /* ===== FETCH DATA VIA JSONP (bypasses CORS) ===== */
-        async function fetchSheetData() {
-            // Primary: JSONP via script tag (bypasses all CORS issues)
-            if (scriptUrl) {
-                try {
-                    const data = await fetchViaJSONP(scriptUrl);
-                    if (data && data.status === 'ok') {
-                        if (sheetUrl) {
-                            const id = extractSheetId(sheetUrl);
-                            if (id) sheetEditUrl = `https://docs.google.com/spreadsheets/d/${id}/edit`;
-                        }
-                        return data.rows || [];
-                    }
-                } catch (e) { console.error('JSONP error:', e); }
+        function requireModuleAccess(moduleName) {
+            return new Promise(resolve => {
+                const t = _rt[moduleName];
+                if (!t) { resolve(true); return }
+                if (_ic(moduleName)) { resolve(true); return }
+                _showAccessModal(moduleName, resolve);
+            });
+        }
+
+        function _showAccessModal(moduleName, callback) {
+            const old = document.getElementById('accessModal'); if (old) old.remove();
+            const m = document.createElement('div'); m.id = 'accessModal'; m.className = 'access-overlay';
+            m.innerHTML = `<div class="access-card"><div class="access-lock">🔒</div><h2 class="access-title">Acceso Restringido</h2><p class="access-subtitle">El módulo <strong>${moduleName}</strong> requiere autorización</p><div class="access-input-group"><label class="access-label">Clave de acceso</label><input type="password" class="access-input" id="accessInput" placeholder="Ingresa la clave del módulo" autocomplete="off"><div class="access-error" id="accessError"></div></div><div class="access-actions"><button class="access-btn-cancel" id="accessCancelBtn">Cancelar</button><button class="access-btn-submit" id="accessSubmitBtn">Verificar</button></div></div>`;
+            document.body.appendChild(m);
+            requestAnimationFrame(() => { m.classList.add('show'); document.getElementById('accessInput').focus() });
+            const inp = document.getElementById('accessInput'), err = document.getElementById('accessError');
+            async function verify() {
+                const v = inp.value; if (!v) { err.textContent = '⚠️ Ingresa la clave'; return }
+                const h = await _hash(v);
+                if (h === _rt[moduleName]) { _sc(moduleName); _close(); callback(true) }
+                else { err.textContent = '❌ Clave incorrecta'; inp.value = ''; inp.focus(); inp.classList.add('shake'); setTimeout(() => inp.classList.remove('shake'), 500) }
             }
+            function _close() { m.classList.remove('show'); setTimeout(() => m.remove(), 300) }
+            document.getElementById('accessSubmitBtn').addEventListener('click', verify);
+            document.getElementById('accessCancelBtn').addEventListener('click', () => { _close(); callback(false) });
+            inp.addEventListener('keydown', e => { if (e.key === 'Enter') verify(); if (e.key === 'Escape') { _close(); callback(false) } });
+            m.addEventListener('click', e => { if (e.target === m) { _close(); callback(false) } });
+        }
+
+        /* ===== SHEET HELPERS ===== */
+        function extractSheetId(url) { const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/); return m ? m[1] : null }
+
+        async function fetchSheetData() {
+            if (scriptUrl) { try { const data = await fetchViaJSONP(scriptUrl); if (data && data.status === 'ok') { if (sheetUrl) { const id = extractSheetId(sheetUrl); if (id) sheetEditUrl = `https://docs.google.com/spreadsheets/d/${id}/edit` } return data.rows || [] } } catch (e) { console.error('JSONP error:', e) } }
             return null;
         }
 
         function fetchViaJSONP(url) {
-            return new Promise((resolve, reject) => {
-                // Create unique callback name
-                const cbName = '_misagi_cb_' + Date.now();
-                // Set global callback
-                window[cbName] = function (data) {
-                    resolve(data);
-                    delete window[cbName];
-                };
-                // Create script tag
-                const script = document.createElement('script');
-                script.src = url + '?callback=' + cbName + '&cachebust=' + Date.now();
-                script.onerror = function () {
-                    delete window[cbName];
-                    reject(new Error('JSONP script failed'));
-                };
-                script.onload = function () {
-                    // Cleanup after a delay (callback should have fired by now)
-                    setTimeout(() => {
-                        if (document.head.contains(script)) document.head.removeChild(script);
-                        if (window[cbName]) { delete window[cbName]; reject(new Error('Callback not called')); }
-                    }, 5000);
-                };
-                document.head.appendChild(script);
-            });
-        }
-
-        function parseCSV(text) {
-            const lines = text.split('\n').map(l => l.trim()).filter(l => l);
-            if (lines.length < 2) return [];
-            const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase());
-            const rows = [];
-            for (let i = 1; i < lines.length; i++) {
-                const cols = parseCSVLine(lines[i]);
-                const row = {};
-                headers.forEach((h, idx) => { row[h] = (cols[idx] || '').trim(); });
-                if (row['area'] && row['titulo']) rows.push(row);
-            }
-            return rows;
-        }
-
-        function parseCSVLine(line) {
-            const result = []; let current = '', inQ = false;
-            for (let i = 0; i < line.length; i++) {
-                const ch = line[i];
-                if (inQ) { if (ch === '"') { if (i + 1 < line.length && line[i + 1] === '"') { current += '"'; i++ } else { inQ = false } } else { current += ch } }
-                else { if (ch === '"') { inQ = true } else if (ch === ',') { result.push(current); current = '' } else { current += ch } }
-            }
-            result.push(current); return result;
+            return new Promise((resolve, reject) => { const cbName = '_misagi_cb_' + Date.now(); window[cbName] = function (data) { resolve(data); delete window[cbName] }; const script = document.createElement('script'); script.src = url + '?callback=' + cbName + '&cachebust=' + Date.now(); script.onerror = function () { delete window[cbName]; reject(new Error('JSONP script failed')) }; script.onload = function () { setTimeout(() => { if (document.head.contains(script)) document.head.removeChild(script); if (window[cbName]) { delete window[cbName]; reject(new Error('Callback not called')) } }, 5000) }; document.head.appendChild(script) });
         }
 
         function organizeData(rows) {
             const areasMap = {};
-            Object.keys(AREAS_CONFIG).forEach(name => { areasMap[name] = { nombre: name, ...AREAS_CONFIG[name], secciones: {} }; });
-            rows.forEach(row => {
-                const areaName = row['area'], seccion = row['seccion'] || 'General', titulo = row['titulo'], url = row['url'] || '', tipo = row['tipo'] || 'link';
-                if (!areasMap[areaName]) areasMap[areaName] = { nombre: areaName, icono: '📂', color: '#64748b', desc: '', secciones: {} };
-                if (!areasMap[areaName].secciones[seccion]) areasMap[areaName].secciones[seccion] = [];
-                areasMap[areaName].secciones[seccion].push({ titulo, url, tipo });
-            });
+            Object.keys(AREAS_CONFIG).forEach(name => { areasMap[name] = { nombre: name, ...AREAS_CONFIG[name], secciones: {} } });
+            rows.forEach(row => { const areaName = row['area'], seccion = row['seccion'] || 'General', titulo = row['titulo'], url = row['url'] || '', tipo = row['tipo'] || 'link'; if (!areasMap[areaName]) areasMap[areaName] = { nombre: areaName, icono: '📂', color: '#64748b', desc: '', secciones: {} }; if (!areasMap[areaName].secciones[seccion]) areasMap[areaName].secciones[seccion] = []; areasMap[areaName].secciones[seccion].push({ titulo, url, tipo }) });
             return Object.values(areasMap);
         }
 
-        function detectType(url, tipo) {
-            if (tipo && tipo !== '' && TYPE_ICONS[tipo]) return tipo;
-            if (!url) return 'link';
-            if (url.includes('spreadsheets')) return 'sheets';
-            if (url.includes('/document/')) return 'docs';
-            if (url.includes('/presentation/')) return 'slides';
-            if (url.includes('/forms/')) return 'form';
-            if (url.includes('/folders/')) return 'folder';
-            if (url.match(/\.pdf/i)) return 'pdf';
-            return 'link';
-        }
+        function detectType(url, tipo) { if (tipo && tipo !== '' && TYPE_ICONS[tipo]) return tipo; if (!url) return 'link'; if (url.includes('spreadsheets')) return 'sheets'; if (url.includes('/document/')) return 'docs'; if (url.includes('/presentation/')) return 'slides'; if (url.includes('/forms/')) return 'form'; if (url.includes('/folders/')) return 'folder'; if (url.match(/\.pdf/i)) return 'pdf'; return 'link' }
 
         /* ===== APPS SCRIPT WRITE ===== */
         async function sendToScript(payload) {
-            if (!scriptUrl) { showToast('⚠️ Configura la URL del Apps Script en ⚙️ Configuración'); return false; }
-            try {
-                // Save current area before refresh
-                const returnToArea = currentAreaName;
-                showToast('⏳ Guardando en Google Sheets...');
-                await fetch(scriptUrl, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
-                // Wait for Google to process, then re-fetch fresh data
-                await new Promise(r => setTimeout(r, 2500));
-                // Refresh data
-                const rows = await fetchSheetData();
-                if (rows !== null) {
-                    APP_DATA = organizeData(rows);
-                }
-                // Navigate back to the area the user was in
-                if (returnToArea) {
-                    showArea(returnToArea);
-                } else {
-                    renderDashboard(APP_DATA);
-                }
-                showToast('✅ ¡Cambio guardado en Google Sheets!');
-                return true;
-            } catch (e) { console.error(e); showToast('❌ Error al guardar'); return false; }
+            if (!scriptUrl) { showToast('⚠️ Configura la URL del Apps Script en ⚙️ Configuración'); return false }
+            try { const returnToArea = currentAreaName; showToast('⏳ Guardando en Google Sheets...'); await fetch(scriptUrl, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) }); await new Promise(r => setTimeout(r, 2500)); const rows = await fetchSheetData(); if (rows !== null) { APP_DATA = organizeData(rows) } if (returnToArea) { showArea(returnToArea) } else { renderDashboard(APP_DATA) } showToast('✅ ¡Cambio guardado en Google Sheets!'); return true } catch (e) { console.error(e); showToast('❌ Error al guardar'); return false }
         }
+        async function addLinkToSheet(area, seccion, titulo, url, tipo) { return sendToScript({ action: 'add', area, seccion, titulo, url, tipo }) }
+        async function deleteLinkFromSheet(area, titulo, url) { return sendToScript({ action: 'delete', area, titulo, url }) }
 
-        async function addLinkToSheet(area, seccion, titulo, url, tipo) {
-            return sendToScript({ action: 'add', area, seccion, titulo, url, tipo });
-        }
-
-        async function deleteLinkFromSheet(area, titulo, url) {
-            return sendToScript({ action: 'delete', area, titulo, url });
+        /* ===== HANDLE CONFIG CLICK (with access check) ===== */
+        async function handleConfigClick() {
+            const ok = await requireModuleAccess('Configuración');
+            if (ok) renderSetupWizard();
         }
 
         /* ===== RENDER SETUP WIZARD ===== */
@@ -1206,37 +1337,7 @@
             document.getElementById('toolbar').style.display = 'none';
             document.getElementById('backBtn').classList.remove('visible');
             currentAreaName = null;
-            main.innerHTML = `
-        <div class="setup-wizard">
-            <h2>⚙️ Configuración del Portal</h2>
-            <p class="sub">Conecta tu Google Sheet y el Apps Script para leer y escribir datos.</p>
-
-            <div class="step">
-                <span class="step-num">1</span><strong>Crea un Google Sheet</strong>
-                <p>Abre <a href="https://sheets.google.com" target="_blank" style="color:var(--misagi-blue);font-weight:600;">sheets.google.com</a> y crea una hoja con estas columnas en la <strong>fila 1</strong>:</p>
-                <p style="margin-top:8px;font-family:monospace;font-size:0.82rem;background:rgba(0,0,0,0.04);padding:8px 12px;border-radius:6px;">
-                    Area &nbsp;|&nbsp; Seccion &nbsp;|&nbsp; Titulo &nbsp;|&nbsp; URL &nbsp;|&nbsp; Tipo</p>
-            </div>
-            <div class="step">
-                <span class="step-num">2</span><strong>Publica el Sheet</strong>
-                <p><strong>Archivo → Compartir → Publicar en la web</strong> → "Todo el documento" → formato "Página web" → "Publicar".</p>
-            </div>
-            <div class="step">
-                <span class="step-num">3</span><strong>Crea el Apps Script</strong>
-                <p>En tu Sheet: <strong>Extensiones → Apps Script</strong>. Borra el código y pega el contenido del archivo <code>apps-script-code.js</code>.</p>
-                <p style="margin-top:6px;">Luego: <strong>Implementar → Nueva implementación</strong> → Tipo: <strong>Aplicación web</strong> → Ejecutar como: <strong>Yo</strong> → Acceso: <strong>Cualquier persona</strong> → <strong>Implementar</strong>.</p>
-            </div>
-
-            <hr class="divider">
-
-            <label>URL de tu Google Sheet (para leer datos)</label>
-            <input type="url" id="sheetUrlInput" placeholder="https://docs.google.com/spreadsheets/d/xxxxx/edit" value="${sheetUrl}">
-
-            <label>URL del Apps Script (para escribir datos)</label>
-            <input type="url" id="scriptUrlInput" placeholder="https://script.google.com/macros/s/xxxxx/exec" value="${scriptUrl}">
-
-            <button class="btn-save" onclick="saveConfig()">🚀 Conectar y Guardar</button>
-        </div>`;
+            main.innerHTML = `<div class="setup-wizard"><h2>⚙️ Configuración del Portal</h2><p class="sub">Conecta tu Google Sheet y el Apps Script para leer y escribir datos.</p><div class="step"><span class="step-num">1</span><strong>Crea un Google Sheet</strong><p>Abre <a href="https://sheets.google.com" target="_blank" style="color:var(--misagi-blue);font-weight:600;">sheets.google.com</a> y crea una hoja con estas columnas en la <strong>fila 1</strong>:</p><p style="margin-top:8px;font-family:monospace;font-size:0.82rem;background:rgba(0,0,0,0.04);padding:8px 12px;border-radius:6px;">Area &nbsp;|&nbsp; Seccion &nbsp;|&nbsp; Titulo &nbsp;|&nbsp; URL &nbsp;|&nbsp; Tipo</p></div><div class="step"><span class="step-num">2</span><strong>Publica el Sheet</strong><p><strong>Archivo → Compartir → Publicar en la web</strong> → "Todo el documento" → formato "Página web" → "Publicar".</p></div><div class="step"><span class="step-num">3</span><strong>Crea el Apps Script</strong><p>En tu Sheet: <strong>Extensiones → Apps Script</strong>. Borra el código y pega el contenido del archivo <code>apps-script-code.js</code>.</p><p style="margin-top:6px;">Luego: <strong>Implementar → Nueva implementación</strong> → Tipo: <strong>Aplicación web</strong> → Ejecutar como: <strong>Yo</strong> → Acceso: <strong>Cualquier persona</strong> → <strong>Implementar</strong>.</p></div><hr class="divider"><label>URL de tu Google Sheet (para leer datos)</label><input type="url" id="sheetUrlInput" placeholder="https://docs.google.com/spreadsheets/d/xxxxx/edit" value="${sheetUrl}"><label>URL del Apps Script (para escribir datos)</label><input type="url" id="scriptUrlInput" placeholder="https://script.google.com/macros/s/xxxxx/exec" value="${scriptUrl}"><button class="btn-save" onclick="saveConfig()">🚀 Conectar y Guardar</button></div>`;
         }
 
         /* ===== RENDER DASHBOARD ===== */
@@ -1246,126 +1347,35 @@
             document.getElementById('toolbar').style.display = 'flex';
             document.getElementById('backBtn').classList.remove('visible');
             currentAreaName = null;
+            const protectedModules = ['Contabilidad', 'Recursos Humanos'];
             const grid = areas.map(area => {
                 const totalLinks = Object.values(area.secciones).reduce((s, links) => s + links.length, 0);
-                return `
-        <div class="area-card" style="--card-accent:${area.color};--card-accent-bg:${area.color}12;" onclick="showArea('${area.nombre.replace(/'/g, "\\'")}')" id="card-${area.nombre.replace(/\s+/g, '_')}">
-            <div class="card-icon">${area.icono}</div>
-            <div class="card-title">${area.nombre}</div>
-            <div class="card-desc">${area.desc || ''} · ${totalLinks} enlace${totalLinks !== 1 ? 's' : ''}</div>
-            <div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
-        </div>`;
+                const isProtected = protectedModules.includes(area.nombre);
+                const lockBadge = isProtected ? '<div class="card-lock">🔒</div>' : '';
+                return `<div class="area-card" style="--card-accent:${area.color};--card-accent-bg:${area.color}12;" onclick="handleAreaClick('${area.nombre.replace(/'/g, "\\'")}')" id="card-${area.nombre.replace(/\s+/g, '_')}">${lockBadge}<div class="card-icon">${area.icono}</div><div class="card-title">${area.nombre}</div><div class="card-desc">${area.desc || ''} · ${totalLinks} enlace${totalLinks !== 1 ? 's' : ''}</div><div class="card-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div>`;
             }).join('');
             main.innerHTML = `<div class="dashboard-grid" id="dashboardGrid">${grid}</div>`;
         }
 
-        function renderLoading() {
-            document.getElementById('mainContent').innerHTML = `<div class="loading"><div class="spinner"></div><p>Cargando datos del Google Sheet...</p></div>`;
+        function renderLoading() { document.getElementById('mainContent').innerHTML = `<div class="loading"><div class="spinner"></div><p>Cargando datos del Google Sheet...</p></div>` }
+
+        /* ===== HANDLE AREA CLICK (with access check) ===== */
+        async function handleAreaClick(areaName) {
+            const ok = await requireModuleAccess(areaName);
+            if (ok) showArea(areaName);
         }
 
         /* ===== SHOW AREA DETAIL ===== */
         function showArea(areaName) {
-            const area = APP_DATA.find(a => a.nombre === areaName);
-            if (!area) return;
+            const area = APP_DATA.find(a => a.nombre === areaName); if (!area) return;
             currentAreaName = areaName;
             const extIcon = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
             const delIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>`;
-
             const sectionKeys = Object.keys(area.secciones);
-            const sectionsHTML = sectionKeys.map(secName => {
-                const links = area.secciones[secName];
-                if (!links.length) return '';
-                return `
-        <div class="section-group">
-            <div class="section-title">${secName}</div>
-            <div class="links-list">
-                ${links.map(link => {
-                    const tipo = detectType(link.url, link.tipo);
-                    const hasUrl = link.url && link.url.trim() !== '';
-                    const tag = hasUrl ? 'a' : 'div';
-                    const href = hasUrl ? `href="${link.url}" target="_blank" rel="noopener noreferrer"` : '';
-                    const noUrlClass = hasUrl ? '' : 'no-url';
-                    return `
-                <div style="display:flex;align-items:center;gap:4px;">
-                    <${tag} class="link-item ${noUrlClass}" ${href} style="flex:1;">
-                        <div class="link-icon ${tipo}">${TYPE_ICONS[tipo] || '📄'}</div>
-                        <div class="link-info">
-                            <div class="link-title">${link.titulo}${!hasUrl ? ' <span style="color:#f59e0b;font-size:0.72rem;">⚠ sin URL</span>' : ''}</div>
-                            <div class="link-type">${TYPE_LABELS[tipo] || tipo}</div>
-                        </div>
-                        <div class="link-external">${hasUrl ? extIcon : ''}</div>
-                    </${tag}>
-                    ${scriptUrl ? `<button class="link-delete-btn" onclick="handleDelete('${areaName.replace(/'/g, "\\'")}','${link.titulo.replace(/'/g, "\\'")}','${(link.url || '').replace(/'/g, "\\'")}')" title="Eliminar enlace">${delIcon}</button>` : ''}
-                </div>`;
-                }).join('')}
-            </div>
-        </div>`;
-            }).join('');
-
-            const emptyMsg = sectionKeys.length === 0 || Object.values(area.secciones).every(s => s.length === 0)
-                ? `<div class="empty-state"><div class="emoji">📭</div><p>Aún no hay enlaces en esta área.<br>Usa el botón "Agregar Enlace" para empezar.</p></div>` : '';
-
+            const sectionsHTML = sectionKeys.map(secName => { const links = area.secciones[secName]; if (!links.length) return ''; return `<div class="section-group"><div class="section-title">${secName}</div><div class="links-list">${links.map(link => { const tipo = detectType(link.url, link.tipo); const hasUrl = link.url && link.url.trim() !== ''; const tag = hasUrl ? 'a' : 'div'; const href = hasUrl ? `href="${link.url}" target="_blank" rel="noopener noreferrer"` : ''; const noUrlClass = hasUrl ? '' : 'no-url'; return `<div style="display:flex;align-items:center;gap:4px;"><${tag} class="link-item ${noUrlClass}" ${href} style="flex:1;"><div class="link-icon ${tipo}">${TYPE_ICONS[tipo] || '📄'}</div><div class="link-info"><div class="link-title">${link.titulo}${!hasUrl ? ' <span style="color:#f59e0b;font-size:0.72rem;">⚠ sin URL</span>' : ''}</div><div class="link-type">${TYPE_LABELS[tipo] || tipo}</div></div><div class="link-external">${hasUrl ? extIcon : ''}</div></${tag}>${scriptUrl ? `<button class="link-delete-btn" onclick="handleDelete('${areaName.replace(/'/g, "\\'")}','${link.titulo.replace(/'/g, "\\'")}','${(link.url || '').replace(/'/g, "\\'")}')" title="Eliminar enlace">${delIcon}</button>` : ''}</div>` }).join('')}</div></div>` }).join('');
+            const emptyMsg = sectionKeys.length === 0 || Object.values(area.secciones).every(s => s.length === 0) ? `<div class="empty-state"><div class="emoji">📭</div><p>Aún no hay enlaces en esta área.<br>Usa el botón "Agregar Enlace" para empezar.</p></div>` : '';
             const main = document.getElementById('mainContent');
-            main.innerHTML = `
-        <div class="detail-view active">
-            <div class="detail-header" style="--card-accent-bg:${area.color}12;">
-                <div class="detail-icon" style="--card-accent-bg:${area.color}12;">${area.icono}</div>
-                <div>
-                    <div class="detail-title">${area.nombre}</div>
-                    <div class="detail-subtitle">${area.desc || ''}</div>
-                </div>
-            </div>
-
-            ${scriptUrl ? `<button class="add-link-btn" onclick="toggleAddForm()">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                Agregar Enlace
-            </button>` : `<a class="add-link-btn" href="${sheetEditUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                Editar en Google Sheets
-            </a>`}
-
-            <div class="add-form-card" id="addFormCard">
-                <h3>➕ Nuevo Enlace para ${area.nombre}</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">Sección</label>
-                        <input class="form-input" id="fSeccion" placeholder="Ej: General, Seguimiento..." value="General">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Tipo</label>
-                        <select class="form-select" id="fTipo">
-                            <option value="sheets">📗 Google Sheets</option>
-                            <option value="docs">📘 Google Docs</option>
-                            <option value="pdf">📕 PDF</option>
-                            <option value="slides">📙 Google Slides</option>
-                            <option value="folder">📁 Carpeta Drive</option>
-                            <option value="form">📝 Google Forms</option>
-                            <option value="link" selected>🔗 Enlace</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group full">
-                        <label class="form-label">Título del enlace</label>
-                        <input class="form-input" id="fTitulo" placeholder="Ej: Tareo Mensual, Control de Llantas...">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group full">
-                        <label class="form-label">URL</label>
-                        <input class="form-input" id="fUrl" placeholder="https://docs.google.com/..." type="url">
-                    </div>
-                </div>
-                <div class="form-actions">
-                    <button class="btn-submit" id="btnSubmitLink" onclick="handleAddLink()">Guardar Enlace</button>
-                    <button class="btn-cancel" onclick="toggleAddForm()">Cancelar</button>
-                </div>
-            </div>
-
-            ${sectionsHTML}
-            ${emptyMsg}
-        </div>`;
-
+            main.innerHTML = `<div class="detail-view active"><div class="detail-header" style="--card-accent-bg:${area.color}12;"><div class="detail-icon" style="--card-accent-bg:${area.color}12;">${area.icono}</div><div><div class="detail-title">${area.nombre}</div><div class="detail-subtitle">${area.desc || ''}</div></div></div>${scriptUrl ? `<button class="add-link-btn" onclick="toggleAddForm()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Agregar Enlace</button>` : `<a class="add-link-btn" href="${sheetEditUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Editar en Google Sheets</a>`}<div class="add-form-card" id="addFormCard"><h3>➕ Nuevo Enlace para ${area.nombre}</h3><div class="form-row"><div class="form-group"><label class="form-label">Sección</label><input class="form-input" id="fSeccion" placeholder="Ej: General, Seguimiento..." value="General"></div><div class="form-group"><label class="form-label">Tipo</label><select class="form-select" id="fTipo"><option value="sheets">📗 Google Sheets</option><option value="docs">📘 Google Docs</option><option value="pdf">📕 PDF</option><option value="slides">📙 Google Slides</option><option value="folder">📁 Carpeta Drive</option><option value="form">📝 Google Forms</option><option value="link" selected>🔗 Enlace</option></select></div></div><div class="form-row"><div class="form-group full"><label class="form-label">Título del enlace</label><input class="form-input" id="fTitulo" placeholder="Ej: Tareo Mensual, Control de Llantas..."></div></div><div class="form-row"><div class="form-group full"><label class="form-label">URL</label><input class="form-input" id="fUrl" placeholder="https://docs.google.com/..." type="url"></div></div><div class="form-actions"><button class="btn-submit" id="btnSubmitLink" onclick="handleAddLink()">Guardar Enlace</button><button class="btn-cancel" onclick="toggleAddForm()">Cancelar</button></div></div>${sectionsHTML}${emptyMsg}</div>`;
             document.getElementById('searchContainer').style.display = 'none';
             document.getElementById('toolbar').style.display = 'none';
             document.getElementById('backBtn').classList.add('visible');
@@ -1373,93 +1383,33 @@
         }
 
         /* ===== FORM HANDLERS ===== */
-        function toggleAddForm() {
-            const f = document.getElementById('addFormCard');
-            f.classList.toggle('show');
-        }
-
-        async function handleAddLink() {
-            const titulo = document.getElementById('fTitulo').value.trim();
-            const url = document.getElementById('fUrl').value.trim();
-            const seccion = document.getElementById('fSeccion').value.trim() || 'General';
-            const tipo = document.getElementById('fTipo').value;
-            if (!titulo) { showToast('⚠️ Escribe un título para el enlace'); return; }
-            document.getElementById('btnSubmitLink').disabled = true;
-            const ok = await addLinkToSheet(currentAreaName, seccion, titulo, url, tipo);
-            document.getElementById('btnSubmitLink').disabled = false;
-            if (ok && currentAreaName) showArea(currentAreaName);
-        }
-
-        async function handleDelete(area, titulo, url) {
-            if (!confirm(`¿Eliminar "${titulo}" de ${area}?`)) return;
-            const ok = await deleteLinkFromSheet(area, titulo, url);
-            if (ok && currentAreaName) showArea(currentAreaName);
-        }
+        function toggleAddForm() { document.getElementById('addFormCard').classList.toggle('show') }
+        async function handleAddLink() { const titulo = document.getElementById('fTitulo').value.trim(); const url = document.getElementById('fUrl').value.trim(); const seccion = document.getElementById('fSeccion').value.trim() || 'General'; const tipo = document.getElementById('fTipo').value; if (!titulo) { showToast('⚠️ Escribe un título para el enlace'); return } document.getElementById('btnSubmitLink').disabled = true; const ok = await addLinkToSheet(currentAreaName, seccion, titulo, url, tipo); document.getElementById('btnSubmitLink').disabled = false; if (ok && currentAreaName) showArea(currentAreaName) }
+        async function handleDelete(area, titulo, url) { if (!confirm(`¿Eliminar "${titulo}" de ${area}?`)) return; const ok = await deleteLinkFromSheet(area, titulo, url); if (ok && currentAreaName) showArea(currentAreaName) }
 
         /* ===== NAVIGATION ===== */
-        function showDashboard() { renderDashboard(APP_DATA); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-
-        function filterAreas(query) {
-            const q = query.toLowerCase().trim();
-            APP_DATA.forEach(area => {
-                const card = document.getElementById(`card-${area.nombre.replace(/\s+/g, '_')}`);
-                if (!card) return;
-                card.style.display = (area.nombre.toLowerCase().includes(q) || (area.desc || '').toLowerCase().includes(q)) ? '' : 'none';
-            });
-        }
+        function showDashboard() { renderDashboard(APP_DATA); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+        function filterAreas(query) { const q = query.toLowerCase().trim(); APP_DATA.forEach(area => { const card = document.getElementById(`card-${area.nombre.replace(/\s+/g, '_')}`); if (!card) return; card.style.display = (area.nombre.toLowerCase().includes(q) || (area.desc || '').toLowerCase().includes(q)) ? '' : 'none' }) }
 
         /* ===== CONFIG ===== */
-        async function saveConfig() {
-            const sUrl = document.getElementById('sheetUrlInput').value.trim();
-            const scUrl = document.getElementById('scriptUrlInput').value.trim();
-            if (!sUrl) { showToast('⚠️ Pega la URL de tu Google Sheet'); return; }
-            if (!extractSheetId(sUrl)) { showToast('⚠️ URL de Sheet no válida'); return; }
-            sheetUrl = sUrl;
-            localStorage.setItem(CONFIG_KEY, sUrl);
-            if (scUrl) { scriptUrl = scUrl; localStorage.setItem(SCRIPT_KEY, scUrl); }
-            showToast('✅ Configuración guardada. Cargando...');
-            await loadAndRender();
-        }
+        async function saveConfig() { const sUrl = document.getElementById('sheetUrlInput').value.trim(); const scUrl = document.getElementById('scriptUrlInput').value.trim(); if (!sUrl) { showToast('⚠️ Pega la URL de tu Google Sheet'); return } if (!extractSheetId(sUrl)) { showToast('⚠️ URL de Sheet no válida'); return } sheetUrl = sUrl; localStorage.setItem(CONFIG_KEY, sUrl); if (scUrl) { scriptUrl = scUrl; localStorage.setItem(SCRIPT_KEY, scUrl) } showToast('✅ Configuración guardada. Cargando...'); await loadAndRender() }
 
-        async function loadAndRender() {
-            renderLoading();
-            const rows = await fetchSheetData();
-            if (rows === null) {
-                // Show dashboard anyway with empty areas
-                showToast('⚠️ No se pudieron cargar datos del Sheet. Mostrando áreas vacías.');
-                APP_DATA = organizeData([]);
-                renderDashboard(APP_DATA);
-                return;
-            }
-            APP_DATA = organizeData(rows);
-            renderDashboard(APP_DATA);
-            showToast(`✅ ${rows.length} enlaces cargados`);
-        }
-
-        async function refreshData() {
-            if (!sheetUrl) { showToast('⚠️ Configura el Google Sheet en ⚙️ Configuración'); return; }
-            await loadAndRender();
-        }
+        async function loadAndRender() { renderLoading(); const rows = await fetchSheetData(); if (rows === null) { showToast('⚠️ No se pudieron cargar datos del Sheet. Mostrando áreas vacías.'); APP_DATA = organizeData([]); renderDashboard(APP_DATA); return } APP_DATA = organizeData(rows); renderDashboard(APP_DATA); showToast(`✅ ${rows.length} enlaces cargados`) }
+        async function refreshData() { if (!sheetUrl) { showToast('⚠️ Configura el Google Sheet en ⚙️ Configuración'); return } await loadAndRender() }
 
         /* ===== TOAST ===== */
-        function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3500); }
+        function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3500) }
 
         /* ===== KEYBOARD ===== */
-        document.addEventListener('keydown', e => { if (e.key === 'Escape' && currentAreaName) showDashboard(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape' && currentAreaName) showDashboard() });
 
         /* ===== LOGO FALLBACK ===== */
-        document.getElementById('logoImg').onerror = function () { this.style.display = 'none'; };
+        document.getElementById('logoImg').onerror = function () { this.style.display = 'none' };
 
         /* ===== INIT ===== */
         (async function init() {
-            if (sheetUrl && extractSheetId(sheetUrl)) {
-                await loadAndRender();
-            } else {
-                // Show dashboard with empty areas even without config
-                APP_DATA = organizeData([]);
-                renderDashboard(APP_DATA);
-                showToast('ℹ️ Ve a ⚙️ Configuración para conectar tu Google Sheet');
-            }
+            if (sheetUrl && extractSheetId(sheetUrl)) { await loadAndRender() }
+            else { APP_DATA = organizeData([]); renderDashboard(APP_DATA); showToast('ℹ️ Ve a ⚙️ Configuración para conectar tu Google Sheet') }
         })();
     </script>
 </body>
