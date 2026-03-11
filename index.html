@@ -343,37 +343,14 @@
             }
         }
 
-        .area-card:nth-child(1) {
-            animation-delay: .03s
-        }
-
-        .area-card:nth-child(2) {
-            animation-delay: .06s
-        }
-
-        .area-card:nth-child(3) {
-            animation-delay: .09s
-        }
-
-        .area-card:nth-child(4) {
-            animation-delay: .12s
-        }
-
-        .area-card:nth-child(5) {
-            animation-delay: .15s
-        }
-
-        .area-card:nth-child(6) {
-            animation-delay: .18s
-        }
-
-        .area-card:nth-child(7) {
-            animation-delay: .21s
-        }
-
-        .area-card:nth-child(8) {
-            animation-delay: .24s
-        }
+        .area-card:nth-child(1) { animation-delay: .03s }
+        .area-card:nth-child(2) { animation-delay: .06s }
+        .area-card:nth-child(3) { animation-delay: .09s }
+        .area-card:nth-child(4) { animation-delay: .12s }
+        .area-card:nth-child(5) { animation-delay: .15s }
+        .area-card:nth-child(6) { animation-delay: .18s }
+        .area-card:nth-child(7) { animation-delay: .21s }
+        .area-card:nth-child(8) { animation-delay: .24s }
 
         .card-icon {
             width: 52px;
@@ -526,44 +503,15 @@
             flex-shrink: 0
         }
 
-        .link-icon.sheets {
-            background: rgba(52, 168, 83, 0.12);
-            color: #34a853
-        }
+        .link-icon.sheets { background: rgba(52, 168, 83, 0.12); color: #34a853 }
+        .link-icon.docs { background: rgba(66, 133, 244, 0.12); color: #4285f4 }
+        .link-icon.pdf { background: rgba(234, 67, 53, 0.12); color: #ea4335 }
+        .link-icon.slides { background: rgba(251, 188, 4, 0.12); color: #f9ab00 }
+        .link-icon.folder { background: rgba(27, 58, 107, 0.1); color: var(--misagi-blue) }
+        .link-icon.form { background: rgba(168, 85, 247, 0.12); color: #7c3aed }
+        .link-icon.link { background: rgba(45, 139, 85, 0.1); color: var(--misagi-green) }
 
-        .link-icon.docs {
-            background: rgba(66, 133, 244, 0.12);
-            color: #4285f4
-        }
-
-        .link-icon.pdf {
-            background: rgba(234, 67, 53, 0.12);
-            color: #ea4335
-        }
-
-        .link-icon.slides {
-            background: rgba(251, 188, 4, 0.12);
-            color: #f9ab00
-        }
-
-        .link-icon.folder {
-            background: rgba(27, 58, 107, 0.1);
-            color: var(--misagi-blue)
-        }
-
-        .link-icon.form {
-            background: rgba(168, 85, 247, 0.12);
-            color: #7c3aed
-        }
-
-        .link-icon.link {
-            background: rgba(45, 139, 85, 0.1);
-            color: var(--misagi-green)
-        }
-
-        .link-info {
-            flex: 1
-        }
+        .link-info { flex: 1 }
 
         .link-title {
             font-weight: 600;
@@ -584,9 +532,7 @@
             flex-shrink: 0
         }
 
-        .link-item:hover .link-external {
-            color: var(--misagi-blue)
-        }
+        .link-item:hover .link-external { color: var(--misagi-blue) }
 
         .link-delete-btn {
             background: none;
@@ -606,10 +552,7 @@
             color: var(--danger)
         }
 
-        .link-delete-btn svg {
-            width: 16px;
-            height: 16px
-        }
+        .link-delete-btn svg { width: 16px; height: 16px }
 
         .add-link-btn {
             display: inline-flex;
@@ -645,9 +588,7 @@
             display: none
         }
 
-        .add-form-card.show {
-            display: block
-        }
+        .add-form-card.show { display: block }
 
         .add-form-card h3 {
             font-size: 1rem;
@@ -669,9 +610,7 @@
             gap: 4px
         }
 
-        .form-group.full {
-            grid-column: 1/-1
-        }
+        .form-group.full { grid-column: 1/-1 }
 
         .form-label {
             font-size: 0.75rem;
@@ -719,15 +658,8 @@
             transition: var(--transition)
         }
 
-        .btn-submit:hover {
-            background: var(--misagi-green-light);
-            box-shadow: var(--shadow)
-        }
-
-        .btn-submit:disabled {
-            opacity: 0.5;
-            cursor: not-allowed
-        }
+        .btn-submit:hover { background: var(--misagi-green-light); box-shadow: var(--shadow) }
+        .btn-submit:disabled { opacity: 0.5; cursor: not-allowed }
 
         .btn-cancel {
             padding: 10px 24px;
@@ -742,15 +674,9 @@
             transition: var(--transition)
         }
 
-        .btn-cancel:hover {
-            background: var(--bg-secondary);
-            border-color: var(--border-hover)
-        }
+        .btn-cancel:hover { background: var(--bg-secondary); border-color: var(--border-hover) }
 
-        .loading {
-            text-align: center;
-            padding: 80px 20px
-        }
+        .loading { text-align: center; padding: 80px 20px }
 
         .spinner {
             width: 40px;
@@ -762,32 +688,13 @@
             margin: 0 auto 16px
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg)
-            }
-        }
+        @keyframes spin { to { transform: rotate(360deg) } }
 
-        .loading p {
-            color: var(--text-muted);
-            font-size: 0.9rem
-        }
+        .loading p { color: var(--text-muted); font-size: 0.9rem }
 
-        .empty-state {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-muted)
-        }
-
-        .empty-state .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 12px
-        }
-
-        .empty-state p {
-            font-size: 0.9rem;
-            line-height: 1.5
-        }
+        .empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted) }
+        .empty-state .emoji { font-size: 2.5rem; margin-bottom: 12px }
+        .empty-state p { font-size: 0.9rem; line-height: 1.5 }
 
         .setup-wizard {
             max-width: 650px;
@@ -799,19 +706,8 @@
             box-shadow: var(--shadow)
         }
 
-        .setup-wizard h2 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--misagi-blue);
-            margin-bottom: 8px
-        }
-
-        .setup-wizard .sub {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
-            line-height: 1.5
-        }
+        .setup-wizard h2 { font-size: 1.4rem; font-weight: 800; color: var(--misagi-blue); margin-bottom: 8px }
+        .setup-wizard .sub { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px; line-height: 1.5 }
 
         .setup-wizard label {
             display: block;
@@ -856,10 +752,7 @@
             transition: var(--transition)
         }
 
-        .setup-wizard .btn-save:hover {
-            background: var(--misagi-blue-light);
-            box-shadow: var(--shadow)
-        }
+        .setup-wizard .btn-save:hover { background: var(--misagi-blue-light); box-shadow: var(--shadow) }
 
         .setup-wizard .step {
             margin-bottom: 16px;
@@ -882,18 +775,8 @@
             margin-right: 8px
         }
 
-        .setup-wizard .step p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 6px;
-            line-height: 1.5
-        }
-
-        .setup-wizard .divider {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 24px 0
-        }
+        .setup-wizard .step p { font-size: 0.85rem; color: var(--text-secondary); margin-top: 6px; line-height: 1.5 }
+        .setup-wizard .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0 }
 
         .toast {
             position: fixed;
@@ -912,10 +795,7 @@
             transition: all 0.4s ease
         }
 
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1
-        }
+        .toast.show { transform: translateY(0); opacity: 1 }
 
         .footer {
             text-align: center;
@@ -925,38 +805,14 @@
         }
 
         @media(max-width:768px) {
-            .app-container {
-                padding: 20px 14px
-            }
-
-            .dashboard-grid {
-                grid-template-columns: 1fr;
-                gap: 14px
-            }
-
-            .area-card {
-                padding: 22px 18px
-            }
-
-            .header {
-                margin-bottom: 28px
-            }
-
-            .header .logo-img {
-                width: 120px
-            }
-
-            .detail-title {
-                font-size: 1.3rem
-            }
-
-            .setup-wizard {
-                padding: 24px 18px
-            }
-
-            .form-row {
-                grid-template-columns: 1fr
-            }
+            .app-container { padding: 20px 14px }
+            .dashboard-grid { grid-template-columns: 1fr; gap: 14px }
+            .area-card { padding: 22px 18px }
+            .header { margin-bottom: 28px }
+            .header .logo-img { width: 120px }
+            .detail-title { font-size: 1.3rem }
+            .setup-wizard { padding: 24px 18px }
+            .form-row { grid-template-columns: 1fr }
         }
 
         /* === ACCESS MODAL === */
@@ -975,9 +831,7 @@
             padding: 20px
         }
 
-        .access-overlay.show {
-            opacity: 1
-        }
+        .access-overlay.show { opacity: 1 }
 
         .access-card {
             background: rgba(255, 255, 255, 0.95);
@@ -992,9 +846,7 @@
             transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)
         }
 
-        .access-overlay.show .access-card {
-            transform: scale(1) translateY(0)
-        }
+        .access-overlay.show .access-card { transform: scale(1) translateY(0) }
 
         .access-lock {
             font-size: 3rem;
@@ -1003,35 +855,14 @@
         }
 
         @keyframes lockPulse {
-
-            0%,
-            100% {
-                transform: scale(1)
-            }
-
-            50% {
-                transform: scale(1.1)
-            }
+            0%, 100% { transform: scale(1) }
+            50% { transform: scale(1.1) }
         }
 
-        .access-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--misagi-blue);
-            margin-bottom: 6px
-        }
+        .access-title { font-size: 1.4rem; font-weight: 800; color: var(--misagi-blue); margin-bottom: 6px }
+        .access-subtitle { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px; line-height: 1.5 }
 
-        .access-subtitle {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
-            line-height: 1.5
-        }
-
-        .access-input-group {
-            text-align: left;
-            margin-bottom: 20px
-        }
+        .access-input-group { text-align: left; margin-bottom: 20px }
 
         .access-label {
             display: block;
@@ -1061,32 +892,14 @@
             box-shadow: 0 0 0 4px rgba(27, 58, 107, 0.1)
         }
 
-        .access-input.shake {
-            animation: shakeInput 0.4s ease
-        }
+        .access-input.shake { animation: shakeInput 0.4s ease }
 
         @keyframes shakeInput {
-
-            0%,
-            100% {
-                transform: translateX(0)
-            }
-
-            20% {
-                transform: translateX(-8px)
-            }
-
-            40% {
-                transform: translateX(8px)
-            }
-
-            60% {
-                transform: translateX(-5px)
-            }
-
-            80% {
-                transform: translateX(5px)
-            }
+            0%, 100% { transform: translateX(0) }
+            20% { transform: translateX(-8px) }
+            40% { transform: translateX(8px) }
+            60% { transform: translateX(-5px) }
+            80% { transform: translateX(5px) }
         }
 
         .access-error {
@@ -1097,10 +910,7 @@
             min-height: 20px
         }
 
-        .access-actions {
-            display: flex;
-            gap: 10px
-        }
+        .access-actions { display: flex; gap: 10px }
 
         .access-btn-cancel {
             flex: 1;
@@ -1116,9 +926,7 @@
             transition: all 0.3s ease
         }
 
-        .access-btn-cancel:hover {
-            background: #e2e8f0
-        }
+        .access-btn-cancel:hover { background: #e2e8f0 }
 
         .access-btn-submit {
             flex: 1.5;
@@ -1156,19 +964,11 @@
             transition: all 0.3s ease
         }
 
-        .area-card:hover .card-lock {
-            opacity: 1;
-            background: rgba(27, 58, 107, 0.12)
-        }
+        .area-card:hover .card-lock { opacity: 1; background: rgba(27, 58, 107, 0.12) }
 
         @media(max-width:768px) {
-            .access-card {
-                padding: 28px 22px
-            }
-
-            .access-title {
-                font-size: 1.2rem
-            }
+            .access-card { padding: 28px 22px }
+            .access-title { font-size: 1.2rem }
         }
     </style>
 </head>
@@ -1258,7 +1058,8 @@
         const _rt = {
             'Configuración': '7c9efc94cbec5122fc59dd5553855171a2e8c89d6397a190cc9d5ce9c12b10a1',
             'Contabilidad': '853474039d038d8077f371b4cc67226d6eaad8ba79e399ec47aeec7544e5f589',
-            'Recursos Humanos': 'f5b6abca0f44a9a62fe2f1c3e036dedf98348a636b2b3dabecddc382ecaadbc8'
+            'Recursos Humanos': 'f5b6abca0f44a9a62fe2f1c3e036dedf98348a636b2b3dabecddc382ecaadbc8',
+            'Planeamiento y Control Presupuestal': '854af0a08d870f754d8ea0fb3329a315d5bfa3a3923f51612396e237d429205b'
         };
         const _sk = 'misagi_rt_cache';
         function _gc() { try { return JSON.parse(sessionStorage.getItem(_sk) || '{}') } catch { return {} } }
@@ -1347,7 +1148,8 @@
             document.getElementById('toolbar').style.display = 'flex';
             document.getElementById('backBtn').classList.remove('visible');
             currentAreaName = null;
-            const protectedModules = ['Contabilidad', 'Recursos Humanos'];
+            /* ── Módulos protegidos con clave ── */
+            const protectedModules = ['Contabilidad', 'Recursos Humanos', 'Planeamiento y Control Presupuestal'];
             const grid = areas.map(area => {
                 const totalLinks = Object.values(area.secciones).reduce((s, links) => s + links.length, 0);
                 const isProtected = protectedModules.includes(area.nombre);
